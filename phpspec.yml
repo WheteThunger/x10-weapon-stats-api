@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: X10WeaponStatsApi
+        psr4_prefix: X10WeaponStatsApi
+        src_path: app

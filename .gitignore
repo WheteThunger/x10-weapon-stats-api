@@ -1,0 +1,18 @@
+
+# Laravel
+/vendor
+.env
+
+# Composer
+composer.phar
+#composer.lock
+
+# OS Stuff
+.DS_Store
+.Thumbs.db
+
+
+# Eclipse
+.buildpath
+.project
+.settings/
