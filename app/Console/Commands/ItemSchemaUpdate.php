@@ -4,20 +4,20 @@ use Illuminate\Console\Command;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Input\InputArgument;
 
-use X10WeaponStatsApi\Models\Weapon;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Collection;
 
-class ItemSchemaRefresh extends Command {
+use X10WeaponStatsApi\Models\Weapon;
 
-	const STEAM_GET_SCHEMA_URL = 'http://api.steampowered.com/IEconItems_440/GetSchema/v0001?key=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX';
-	
+class ItemSchemaUpdate extends Command {
+    
 	/**
 	 * The console command name.
 	 *
 	 * @var string
 	 */
-	protected $name = 'itemschema:refresh';
+	protected $name = 'itemschema:update';
 
 	/**
 	 * The console command description.
@@ -69,36 +69,60 @@ class ItemSchemaRefresh extends Command {
 	 */
 	public function fire()
 	{
-		$schema = $this->getItemSchema();
-		
-		//print_r(array_keys($item_schema['result']));
-		//die();
-		
-// 	$this->refreshWeapons($item_schema['result']['items']);
-// 	$this->refreshAttributes($item_schema['result']['attributes']);
-		
-		$this->bulkRefresh('weapons', $this->weapon_props, $schema['result']['items']);
-		$this->bulkRefresh('attributes', $this->attribute_props, $schema['result']['attributes']);
+	    $this->info('Getting item schema from steam...');
+	    $schema = $this->getItemSchema()['result'];
+	    $this->info("  Done");
+	
+ 		$this->bulkInsert('X10WeaponStatsApi\Models\Weapon', $schema['items']);
+ 		$this->bulkInsert('X10WeaponStatsApi\Models\Attribute', $schema['attributes']);
 	}
 
 	private function getItemSchema() {
-		//$json_data = json_decode(file_get_contents(self::STEAM_GET_SCHEMA_URL));
+	    $STEAM_GET_SCHEMA_URL = 'http://api.steampowered.com/IEconItems_440/GetSchema/v0001?language=en_US&key=' . env('STEAM_WEB_API_KEY');
 		
-		// TEMP: While I'm developing the code
-		$file_str = file_get_contents(__DIR__.'/get_schema_example_output.json');
-		return json_decode($file_str, true);
+	    $file_contents = file_get_contents($STEAM_GET_SCHEMA_URL);
+	    //$file_contents = file_get_contents(__DIR__ . "/get_schema_example_output.json");
+		
+		return json_decode($file_contents, true);
 	}
 	
-	private function bulkRefresh($table, array $props, array $raw_items) {
-		
+	/*
+	 *  Inserts any entries that don't already exist in our database.
+	 *  This function should work as long as the entities primary key exists in 
+	 *  the item schema.
+	 *  
+	 *  This function assumes that the entity being inserted has created_at 
+	 *  and updated_at fields
+	 */
+	private function bulkInsert($class_name, array $raw_items, array $props = null) {
+	    $pk = (new $class_name)->getKeyName();
+	    $table = (new $class_name)->getTable();
+	    $props = $props ?: (new $class_name)->fillable;
+	    
+	    $existing_weapons = $class_name::all()
+	       ->map(function($weapon) use ($pk) { 
+	           return $weapon->$pk; 
+	       })
+	       ->toArray()
+	    ;
+	    	    
+	    $raw_collection = new Collection($raw_items);
+	    
+	    // We only want entries that don't exist in our database
+	    $raw_collection = $raw_collection->filter(function($raw_item) use($existing_weapons, $pk) {
+ 	        return !in_array($raw_item[$pk], $existing_weapons);
+	    });
+	    
+	    
 		$inserts = [];
 		
-		foreach($raw_items as $raw_item) {
+		foreach($raw_collection as $raw_item) {
 		    $to_insert = [];
 		     
 		    foreach($props as $prop) {
 		        $to_insert[$prop] = isset($raw_item[$prop]) ? $raw_item[$prop] : "";
 		    }
+		    
 		    $to_insert['created_at'] = (new \DateTime)->format('Y-m-d H:i:s');
 		    $to_insert['updated_at'] = $to_insert['created_at'];
 		     
@@ -106,17 +130,17 @@ class ItemSchemaRefresh extends Command {
 		     
 		}
 		
-		$this->info("Deleting all $table");
-		\DB::table($table)->delete();
-		$this->info("Done deleting $table");
+		$count = count($inserts);
+		$this->info("Inserting $count row(s) into  $table...");
 		
-		$this->info("Inserting rows $table");
-		
+		// Were chunking things because if its the first load and were trying to insert
+		// 3000 weapons the SQL gets pretty darn long and sometimes it fails (on SQLite)
+		// -- deviousfrog 2015-01-31
 		foreach(array_chunk($inserts, 500) as $chunk) {
 		    \DB::table($table)->insert($chunk);
 		}
 		
-		$this->info("Done inserting $table");
+		$this->info("  Done");
 	}
 	
 	private function refreshAttributes($attributes) {

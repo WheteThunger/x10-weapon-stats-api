@@ -98,6 +98,6 @@ class WeaponsController extends Controller
      */
     public function destroy($id)
     {
-        Weapon::findOrFail($id)->destroy();
+        Weapon::findOrFail($id)->delete();
     }
 }
