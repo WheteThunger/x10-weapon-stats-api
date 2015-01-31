@@ -2,6 +2,10 @@
 # Laravel
 /vendor
 .env
+/storage/database.sqlite
+
+bumble_notes.md
+
 
 # Composer
 composer.phar

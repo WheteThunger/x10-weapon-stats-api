@@ -12,6 +12,7 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected $commands = [
 		'X10WeaponStatsApi\Console\Commands\Inspire',
+		'X10WeaponStatsApi\Console\Commands\ItemSchemaRefresh',
 	];
 
 	/**

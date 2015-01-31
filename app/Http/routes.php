@@ -19,3 +19,11 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
+	Route::get('/', ['as' => 'adminIndex', 'uses' => 'AdminController@getIndex']);
+	
+	Route::resource('weapons', 'WeaponsController');
+});
+
