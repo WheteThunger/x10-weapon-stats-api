@@ -7,7 +7,7 @@
         'method' => (isset($weapon->defindex) ? 'PUT' : 'POST') 
     ]) !!}
     
-        @foreach($weapon->fillable as $prop)
+        @foreach($weapon->getFillable() as $prop)
         <div class="form-field">
             {!! Form::label($prop); !!}
             {!! Form::text($prop); !!}

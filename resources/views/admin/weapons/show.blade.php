@@ -39,7 +39,7 @@
                 </a>
             </div>
 
-	@foreach($weapon->fillable as $prop)
+	@foreach($weapon->getFillable() as $prop)
             <div class="field">
                 <div class="field-name">
                     {{ $prop }}
