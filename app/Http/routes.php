@@ -24,6 +24,7 @@ Route::controllers([
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 	Route::get('/', ['as' => 'adminIndex', 'uses' => 'AdminController@getIndex']);
 	
+	Route::model('weapons', 'X10WeaponStatsApi\Models\Weapon');
 	Route::resource('weapons', 'WeaponsController');
 });
 
