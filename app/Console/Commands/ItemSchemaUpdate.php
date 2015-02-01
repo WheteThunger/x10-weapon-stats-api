@@ -125,10 +125,10 @@ class ItemSchemaUpdate extends Command {
 		
 		$count = count($inserts);
 		
-		// Were chunking things because if its the first load and we're trying to insert
+		// We're chunking things because if its the first load and we're trying to insert
 		// 3000 weapons the SQL gets pretty darn long and sometimes it fails (on SQLite)
 		// -- deviousfrog/bumble 2015-01-31
-		foreach(array_chunk($inserts, 500) as $chunk) {
+		foreach(array_chunk($inserts, 10) as $chunk) {
 		    \DB::table($table)->insert($chunk);
 		}
 	}

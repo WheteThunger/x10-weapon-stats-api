@@ -7,7 +7,8 @@
 	"minimium-stability": "dev",
 	"require": {
 		"laravel/framework": "5.0.*@dev",
-		"illuminate/html": "5.0.*@dev"
+		"illuminate/html": "5.0.*@dev",
+		"doctrine/dbal":"~2.4"
 	},
 	"require-dev": {
 		"phpunit/phpunit": "~4.0",

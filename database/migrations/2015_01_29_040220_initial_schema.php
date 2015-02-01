@@ -32,7 +32,7 @@ class InitialSchema extends Migration {
 			$table->string('item_class');
 			$table->string('item_type_name');
 			$table->string('item_name');
-			$table->string('item_description');
+			$table->string('item_description', 1000);
 			$table->boolean('proper_name');
 			$table->string('item_slot');
 			$table->integer('item_quality');
