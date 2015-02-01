@@ -29,9 +29,31 @@
 	           Weapon List
 	       </a>
 	   </li>
-	   <li><a href="{{ route('admin.weapons.create') }}">
+	   <li>
+	       <a href="{{ route('admin.weapons.create') }}">
 	           Weapon Create
-	       </a></li>
+	       </a>
+      </li>
+      <li>
+	       <a href="{{ route('admin.attributes.index') }}">
+	           Attribute List
+	       </a>
+      </li>
+      <li>
+	       <a href="{{ route('admin.attributes.create') }}">
+	           Attribute Create
+	       </a>
+      </li>
+      <li>
+	       <a href="{{ route('admin.people.index') }}">
+	           Person List
+	       </a>
+      </li>
+      <li>
+	       <a href="{{ route('admin.people.create') }}">
+	           Person Create
+	       </a>
+      </li>
 	</nav>
 	<main> @yield('content') </main>
 

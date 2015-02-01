@@ -39,18 +39,19 @@
                 </a>
             </div>
 
-	@foreach($weapon->getFillable() as $prop)
-            <div class="field">
-                <div class="field-name">
-                    {{ $prop }}
+	       @foreach($weapon->getFillable() as $prop)
+                <div class="field">
+                    <div class="field-name">
+                        {{ $prop }}
+                    </div>
+                    <div class="field-value">
+                        {{ $weapon->$prop }}
+                    </div>
                 </div>
-                <div class="field-value">
-                    {{ $weapon->$prop }}
-                </div>
+            @endforeach
+       		<div>
+       			<a href="{{ route('admin.weapons.edit', ['id' => $weapon->defindex]) }}">Edit</a>
             </div>
-   @endforeach
-   		<div>
-   			<a href="{{ route('admin.weapons.edit', ['id' => $weapon->defindex]) }}">Edit</a>
         </div>
     </div>
 @stop

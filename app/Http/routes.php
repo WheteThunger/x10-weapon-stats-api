@@ -26,5 +26,12 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
 	
 	Route::model('weapons', 'X10WeaponStatsApi\Models\Weapon');
 	Route::resource('weapons', 'WeaponsController');
+	
+	Route::model('attributes', 'X10WeaponStatsApi\Models\Attribute');
+	Route::resource('attributes', 'AttributesController');
+	
+	Route::model('people', 'X10WeaponStatsApi\Models\Person');
+	Route::resource('people', 'PeopleController');
+	
 });
 
