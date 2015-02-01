@@ -6,8 +6,7 @@ class Attribute extends Model {
 
     protected $primaryKey = 'defindex';
     
-    // I'm not sure if this "should" be public. 
-	public $fillable = [
+	protected $fillable = [
 		'defindex',
 		'name',
 		'attribute_class',

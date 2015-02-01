@@ -6,8 +6,7 @@ class Weapon extends Model {
 
     protected $primaryKey = 'defindex';
     
-    // I'm not sure if this "should" be public. 
-	public $fillable = [
+	protected $fillable = [
 	    'defindex',
 	    'item_class',
 	    'item_type_name',
@@ -21,5 +20,9 @@ class Weapon extends Model {
 	    'min_ilevel',
 	    'max_ilevel'
 	];
+	
+	public function classes() {
+	    return $this->belongsToMany('X10WeaponStatsApi\Models\TF2Class', 'class_weapon','weapon_defindex', 'class_id');
+	}
 
 }
