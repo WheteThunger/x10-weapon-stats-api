@@ -7,8 +7,10 @@ use Symfony\Component\Console\Input\InputArgument;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 
 use X10WeaponStatsApi\Models\Weapon;
+use X10WeaponStatsApi\Models\TF2Class;
 
 class ItemSchemaUpdate extends Command {
     
@@ -24,33 +26,7 @@ class ItemSchemaUpdate extends Command {
 	 *
 	 * @var string
 	 */
-	protected $description = 'Pull in the item schema and update the db';
-
-	private $weapon_props = [
-	    'defindex',
-	    'item_class',
-	    'item_type_name',
-	    'item_name',
-	    'item_description',
-	    'proper_name',
-	    'item_slot',
-	    'item_quality',
-	    'image_url',
-	    'image_url_large',
-	    'min_ilevel',
-	    'max_ilevel'
-	];
-	
-	private $attribute_props = [
-	    'name',
-	    'defindex',
-	    'attribute_class',
-	    'description_string',
-	    'description_format',
-	    'effect_type',
-	    'hidden',
-	    'stored_as_integer'
-	];
+	protected $description = 'Pull in the item schema and update the db. Updates weapons, attributes, and class_weapon';
 	
 	/**
 	 * Create a new command instance.
@@ -72,16 +48,32 @@ class ItemSchemaUpdate extends Command {
 	    $this->info('Getting item schema from steam...');
 	    $schema = $this->getItemSchema()['result'];
 	    $this->info("  Done");
-	
- 		$this->bulkInsert('X10WeaponStatsApi\Models\Weapon', $schema['items']);
+	    
+	    $items = new Collection($schema['items']);
+	    
+	    $weapons = $items->filter(function($item) {
+	        return isset($item['item_class']) 
+	        && Str::startsWith($item['item_class'], 'tf_weapon');
+	    })->toArray();
+	    
+	    $this->info("Inserting new weapons...");
+ 		$this->bulkInsert('X10WeaponStatsApi\Models\Weapon', $weapons);
+ 		$this->info("  Done");
+ 		
+ 		$this->info("Inserting new attributes...");
  		$this->bulkInsert('X10WeaponStatsApi\Models\Attribute', $schema['attributes']);
+ 		$this->info("  Done");
+ 		
+ 		$this->info("Updating class-weapon relationships...");
+ 		$this->refreshClassWeaponRelations($schema);
+ 		$this->info("  Done");
 	}
 
 	private function getItemSchema() {
 	    $STEAM_GET_SCHEMA_URL = 'http://api.steampowered.com/IEconItems_440/GetSchema/v0001?language=en_US&key=' . env('STEAM_WEB_API_KEY');
 		
-	    $file_contents = file_get_contents($STEAM_GET_SCHEMA_URL);
-	    //$file_contents = file_get_contents(__DIR__ . "/get_schema_example_output.json");
+	    //$file_contents = file_get_contents($STEAM_GET_SCHEMA_URL);
+	    $file_contents = file_get_contents(__DIR__ . "/get_schema_example_output.json");
 		
 		return json_decode($file_contents, true);
 	}
@@ -97,8 +89,9 @@ class ItemSchemaUpdate extends Command {
 	private function bulkInsert($class_name, array $raw_items, array $props = null) {
 	    $pk = (new $class_name)->getKeyName();
 	    $table = (new $class_name)->getTable();
-	    $props = $props ?: (new $class_name)->fillable;
+	    $props = $props ?: (new $class_name)->getFillable();
 	    
+	    // Get an array of existing primary keys
 	    $existing_weapons = $class_name::all()
 	       ->map(function($weapon) use ($pk) { 
 	           return $weapon->$pk; 
@@ -131,26 +124,39 @@ class ItemSchemaUpdate extends Command {
 		}
 		
 		$count = count($inserts);
-		$this->info("Inserting $count row(s) into  $table...");
 		
-		// Were chunking things because if its the first load and were trying to insert
+		// Were chunking things because if its the first load and we're trying to insert
 		// 3000 weapons the SQL gets pretty darn long and sometimes it fails (on SQLite)
-		// -- deviousfrog 2015-01-31
+		// -- deviousfrog/bumble 2015-01-31
 		foreach(array_chunk($inserts, 500) as $chunk) {
 		    \DB::table($table)->insert($chunk);
 		}
-		
-		$this->info("  Done");
 	}
 	
-	private function refreshAttributes($attributes) {
-		
-	}
-	
-	private function refreshWeapons($weapons) {
-		
-
-		
+	protected  function refreshClassWeaponRelations($schema) {
+	    $schema_items = new Collection($schema['items']);
+	    
+	    $schema_weapons = $schema_items->filter(function($item) {
+	        return isset($item['item_class']) 
+	        && Str::startsWith($item['item_class'], 'tf_weapon')
+	        && isset($item['used_by_classes']);
+	    });
+	    
+	    $classes = TF2Class::all();
+	    
+	    $schema_weapons->each(function($schema_weapon) use($classes) {
+	        $schema_uses_classes = new Collection($schema_weapon['used_by_classes']);
+	        
+            $used_classes = $classes->filter(function($class) use($schema_weapon) {
+                $used_by = array_map('strtolower', $schema_weapon['used_by_classes']);
+                return in_array($class->name, $used_by);
+            });
+	       
+            $our_weapon = Weapon::findOrfail($schema_weapon['defindex']);
+            $our_weapon->classes()->sync($used_classes);
+            $our_weapon->save();
+	    });
+	    
 	}
 	
 	/**
