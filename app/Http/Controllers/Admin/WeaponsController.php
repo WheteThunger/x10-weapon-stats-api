@@ -17,12 +17,7 @@ class WeaponsController extends Controller
      */
     public function index()
     {
-        $weapons = Weapon::all()
-            ->filter(function($item) {
-                return stripos($item->item_class, 'tf_weapon') === 0;
-            })
-            ->sortBy('defindex', SORT_NUMERIC)
-        ;
+        $weapons = Weapon::all()->sortBy('defindex', SORT_NUMERIC);
         
     	return view('admin.weapons.index', ['weapons' => $weapons]);
     }
@@ -54,7 +49,7 @@ class WeaponsController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param int $id            
+     * @param Weapon $weapon           
      * @return Response
      */
     public function show(Weapon $weapon)
@@ -65,7 +60,7 @@ class WeaponsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id            
+     * @param Weapon $weapon       
      * @return Response
      */
     public function edit(Weapon $weapon)
@@ -96,12 +91,8 @@ class WeaponsController extends Controller
     {
        $weapon->delete();
        
-       $weapons = Weapon::all()
-           ->filter(function($item) {
-               return stripos($item->item_class, 'tf_weapon') === 0;
-           })
-           ->sortBy('defindex', SORT_NUMERIC)
-       ;
-       return \Redirect::route('admin.weapons.index', ['weapons' => $weapon->$weapons]);
+       $weapons = Weapon::all()->sortBy('defindex', SORT_NUMERIC);
+       
+       return \Redirect::route('admin.weapons.index', ['weapons' => $weapons]);
     }
 }
