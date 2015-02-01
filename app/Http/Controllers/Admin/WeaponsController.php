@@ -57,9 +57,9 @@ class WeaponsController extends Controller
      * @param int $id            
      * @return Response
      */
-    public function show($id)
+    public function show(Weapon $weapon)
     {
-        return view('admin.weapons.show', ['weapon' => Weapon::findOrFail($id)]);
+        return view('admin.weapons.show', ['weapon' => $weapon]);
     }
 
     /**
@@ -68,10 +68,8 @@ class WeaponsController extends Controller
      * @param int $id            
      * @return Response
      */
-    public function edit($id)
+    public function edit(Weapon $weapon)
     {
-        $weapon = Weapon::findOrFail($id);
-        
         return view('admin.weapons.form', ['weapon' => $weapon]);
     }
 
@@ -81,13 +79,11 @@ class WeaponsController extends Controller
      * @param int $id            
      * @return Response
      */
-    public function update($id, Request $request)
+    public function update(Weapon $weapon, Request $request)
     {
-        $weapon = Weapon::find($id)->fill($request->all());
+        $weapon->fill($request->all())->save();
         
-        $weapon->save();
-        
-        return \Redirect::route('admin.weapons.show', [$weapon->defindex]);
+        return \Redirect::route('admin.weapons.show', ['weapon' => $weapon->defindex]);
     }
 
     /**
@@ -96,8 +92,16 @@ class WeaponsController extends Controller
      * @param int $id            
      * @return Response
      */
-    public function destroy($id)
+    public function destroy(Weapon $weapon)
     {
-        Weapon::findOrFail($id)->delete();
+       $weapon->delete();
+       
+       $weapons = Weapon::all()
+           ->filter(function($item) {
+               return stripos($item->item_class, 'tf_weapon') === 0;
+           })
+           ->sortBy('defindex', SORT_NUMERIC)
+       ;
+       return \Redirect::route('admin.weapons.index', ['weapons' => $weapon->$weapons]);
     }
 }
