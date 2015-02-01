@@ -41,8 +41,14 @@ class PersonTableSeeder extends Seeder {
                 'updated_at'  => $now_str
             ],
             [
-                'name'        => 'Bumble+Lancil+Roker+WhiteThunder',
-                'tf2items_id' => 'STEAM_0:0:18322085 ; STEAM_0:0:11531014 ; STEAM_0:1:19354576 ; STEAM_0:0:54985507',
+                'name'        => 'Praynspray',
+                'tf2items_id' => 'STEAM_0:1:54499221',
+                'created_at'  => $now_str,
+                'updated_at'  => $now_str
+            ],
+            [
+                'name'        => 'Bumble+Lancil+Roker+WhiteThunder+Praynspray',
+                'tf2items_id' => 'STEAM_0:0:18322085 ; STEAM_0:0:11531014 ; STEAM_0:1:19354576 ; STEAM_0:0:54985507 ; STEAM_0:1:54499221',
                 'created_at'  => $now_str,
                 'updated_at'  => $now_str
             ],
