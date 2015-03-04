@@ -1,0 +1,116 @@
+//[ST:SYNC]
+"custom_weapons_v3"
+{
+    "*"
+	{
+		"438" // Director's Vision
+		{
+			"1"				"322 ; 1" // HOld taunt
+		}
+		"237" // Rocket Jumper
+		{
+            "name"	"Lancil Jumper"
+            "item_name" "Lancil's Jumper"
+			"quality"		"5"
+			"level"			"100"
+
+			"1"				"134 ; 2" // Particle Effect
+            "2"             "181 ; 2" // Self Damage Text, no effect
+            "3"             "476 ; -1" // Damage bonus hidden
+            "4"             "318 ; 0.1" // Reload Time
+            "5"             "4  ;  10" // Clip size bonus
+			"6"             "76 ; 10" // MaxAmmo count
+			"7"             "128 ; 1"       //Provide on active
+			"8"				"275 ; 1" // no fall damage
+			"9"             "169 ; 0.1" // Reduced sentry damage
+            "10"             "252  ;  0.7"   // Force Reduction
+		}
+		"386" // Rocket Jumper
+		{
+            "name"	"Lancil Jumper"
+            "item_name" "Lancil's Jumper"
+			"quality"		"5"
+			"level"			"100"
+
+			"1"				"134 ; 2" // Particle Effect
+		}
+        "265" // Sticky Jumper
+		{
+            "name"	"Roker Jumper"
+            "item_name" "Roker's Jumper"
+			"quality"		"5"
+			"level"			"100"
+
+			"1"				"134 ; 2" // Particle Effect
+            "2"             "181 ; 2" // Self Damage Text, no effect
+            "3"             "476 ; -1" // Damage bonus hidden
+            "4"             "318 ; 0.1" // Reload Time
+            "5"             "4  ;  10" // Clip size bonus
+			"6"				"275 ; 1" //Fall damage prevention
+            "7"             "78 ; 10"       // MaxAmmo count
+			"8"				"88 ; 8" // max pipebombs increased
+		}
+		"730" // Beggars
+		{
+            "1"             "411 ; 20" //Angle Penalty
+            "2"             "4  ;  5" /// Clip size bonus
+            "3"             "76 ; 10" // MaxAmmo count
+            "4"             "413 ; 1" //Auto-Fire Clip
+            "5"             "417 ; 1" //Can Overload
+            "6"             "394 ; 0.07" //Fire Rate increase hidden
+            "7"             "241 ; 0.55" //Reload increase hidden
+            "8"             "135 ; .05" //Rocket Jump Decrease
+            "9"             "15 ; 0" //Crits Disabled
+			"10"            "475 ; 1.05"    //Speed Increase HIDDEN for rocket bounce
+			"11"				"214 ; 1" // strange counter
+        }
+        "18" // stock Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+			"7"				"214 ; 1" // strange counter
+        }
+        "127" // Direct Hit
+		{
+            "1"             "103 ; 3.5"    //Speed Increase DO NOT INCREASE causes errors if any higher
+            "2"             "100 ; 0.01" //Splash decrease
+            "3"             "2 ; 3" //Damage increase
+            "4"             "114 ; 1" //mini-crit airborn
+			"5"				"214 ; 1" // strange counter
+			"6"				"215 ; 60" // apply Z velocity
+        }
+        "414" // Liberty
+		{
+            "1"             "103 ; 1.5"    //Speed Increase DO NOT INCREASE causes errors if any higher
+            "2"             "6 ; 0.5"       //Fire rate increase
+			"3"             "1 ; 1"  //Damage penalty
+			"4"             "4  ;  1.5" // Clip size bonus
+			"5"             "318 ; 0.9" // Reload Time
+			"6"             "76 ; 2" // MaxAmmo count
+			"7"				"488 ; 3" // Rocket specialist
+			"8"				"214 ; 1" // strange counter
+        }
+        "228"  // Black Box
+		{
+            ///"1"             "26 ;   100"     // Health increase
+            "1"             "16  ;  150"    // Health on hit
+            "2"             "5  ;  1"    // Fire rate penalty
+            "3"             "180  ;  150"    // Heal on kill
+            "4"             "3 ;  0.75"    //Clip size Penalty
+			"5"				"214 ; 1" // strange counter
+        }
+		"1085"  // Festive Black Box
+		{
+            //"1"             "26 ;   100"     // Health increase
+            "1"             "16  ;  150"    // Health on hit
+            "2"             "5  ;  1"    // Fire rate penalty
+            "3"             "180  ;  150"    // Heal on kill
+            "4"             "3 ;  0.75"    //Clip size Penalty
+			"5"				"214 ; 1" // strange counter
+        }
+    }
+}
