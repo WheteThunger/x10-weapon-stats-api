@@ -15,7 +15,7 @@ class InitialSchema extends Migration {
 	    Schema::create('configs', function(Blueprint $table) {
 	       $table->increments('id');
 	       $table->string('name');
-	       $table->integer('parent_id');
+	       $table->integer('parent_id')->nullable();
 	       $table->timestamps();
 	    });
 	    
@@ -29,6 +29,7 @@ class InitialSchema extends Migration {
 		Schema::create('weapons', function(Blueprint $table) {
 		    $table->integer('defindex');
 		    $table->primary('defindex');
+		    $table->string('name')->nullable();
 			$table->string('item_class');
 			$table->string('item_type_name');
 			$table->string('item_name');
@@ -68,19 +69,23 @@ class InitialSchema extends Migration {
 		});
 		
 		Schema::create('weapon_instance', function(Blueprint $table) {
+			$table->integer('id');
+			$table->primary('id');
 			$table->integer('config_id');
 			$table->integer('person_id');
 			$table->integer('weapon_defindex');
-			$table->integer('attribute_defindex');
-			$table->primary([
-			    'config_id', 
-			    'person_id', 
-			    'weapon_defindex', 
-			    'attribute_defindex'
-			]);
-			
-			$table->string('attribute_value');
+			$table->unique(['config_id', 'person_id', 'weapon_defindex']);
 			$table->timestamps();
+		});
+		
+		Schema::create('weapon_instance_attributes', function (Blueprint $table) {
+		    $table->integer('id');
+		    $table->primary('id');
+		    $table->integer('weapon_instance_id');
+		    $table->integer('attribute_defindex');
+		    $table->unique(['weapon_instance_id', 'attribute_defindex']);
+		    $table->string('attribute_value');
+		    $table->timestamps();
 		});
 		
 	}
@@ -99,6 +104,7 @@ class InitialSchema extends Migration {
 		Schema::dropIfExists('classes');
 		Schema::dropIfExists('class_weapon');
 		Schema::dropIfExists('weapon_instance');
+		Schema::dropIfExists('weapon_instance_attribute');
 	}
 
 }

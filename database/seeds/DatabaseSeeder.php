@@ -2,6 +2,7 @@
 
 require 'ClassTableSeeder.php';
 require 'PersonTableSeeder.php';
+require 'ConfigTableSeeder.php';
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
@@ -19,6 +20,7 @@ class DatabaseSeeder extends Seeder {
 
 		$this->call('ClassTableSeeder');
 		$this->call('PersonTableSeeder');
+		$this->call('ConfigTableSeeder');
 	}
 
 }
