@@ -20,3 +20,6 @@ composer.phar
 .buildpath
 .project
 .settings/
+
+# Phpstorm
+.idea/
