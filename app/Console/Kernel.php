@@ -13,6 +13,8 @@ class Kernel extends ConsoleKernel {
 	protected $commands = [
 		'X10WeaponStatsApi\Console\Commands\Inspire',
 		'X10WeaponStatsApi\Console\Commands\ItemSchemaUpdate',
+	    'X10WeaponStatsApi\Console\Commands\Tf2ItemsReadFile',
+	    'X10WeaponStatsApi\Console\Commands\Tf2ItemsWriteFile',
 	];
 
 	/**

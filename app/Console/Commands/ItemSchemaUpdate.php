@@ -51,10 +51,14 @@ class ItemSchemaUpdate extends Command {
 	    
 	    $items = new Collection($schema['items']);
 	    
-	    $weapons = $items->filter(function($item) {
-	        return isset($item['item_class']) 
-	        && Str::startsWith($item['item_class'], 'tf_weapon');
-	    })->toArray();
+	    $weapons = $items;
+	    
+// 	    $weapons = $weapons->filter(function($item) {
+// 	        return isset($item['item_class'])
+// 	        && Str::startsWith($item['item_class'], 'tf_weapon');
+// 	    });
+	    
+	    $weapons = $weapons->toArray();
 	    
 	    $this->info("Inserting new weapons...");
  		$this->bulkInsert('X10WeaponStatsApi\Models\Weapon', $weapons);
