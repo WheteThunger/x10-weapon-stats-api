@@ -8,6 +8,7 @@ class Weapon extends Model {
     
 	protected $fillable = [
 	    'defindex',
+	    'name',
 	    'item_class',
 	    'item_type_name',
 	    'item_name',
