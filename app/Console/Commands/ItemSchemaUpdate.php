@@ -203,7 +203,7 @@ class ItemSchemaUpdate extends Command
         
         \DB::table('weapon_instance')->delete();
         
-        foreach (array_chunk($to_insert, 100) as $chunk) {
+        foreach (array_chunk($to_insert, 10) as $chunk) {
             \DB::table('weapon_instance')->insert($chunk);
         }
     }

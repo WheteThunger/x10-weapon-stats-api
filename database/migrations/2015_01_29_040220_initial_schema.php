@@ -70,7 +70,7 @@ class InitialSchema extends Migration {
 		});
 		
 		Schema::create('weapon_instance', function(Blueprint $table) {
-			$table->integer('id')->unique();
+			$table->integer('id');
 			$table->primary('id');
 			$table->integer('person_id');
 			$table->integer('weapon_defindex');
