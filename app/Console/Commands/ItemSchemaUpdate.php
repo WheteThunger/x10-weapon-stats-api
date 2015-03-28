@@ -47,8 +47,8 @@ class ItemSchemaUpdate extends Command
 	 * @return mixed
 	 */
 	public function fire() {
-	    $table = $this->argument('table');
-	    
+		$table = $this->argument('table');
+		
 		$this->info('Getting item schema from steam...');
 		$schema = $this->getItemSchema()['result'];
 		$this->info("  Done");
@@ -57,31 +57,31 @@ class ItemSchemaUpdate extends Command
 		
 		$weapons = $weapons->toArray();
 		
-		if($table === 'weapon' || $table === 'all') {
-		    $this->info("Inserting new weapons...");
-		    $this->bulkInsert('X10WeaponStatsApi\Models\Weapon', $weapons);
-		    $this->info("  Done");
+		if ($table === 'weapon' || $table === 'all') {
+			$this->info("Inserting new weapons...");
+			$this->bulkInsert('X10WeaponStatsApi\Models\Weapon', $weapons);
+			$this->info("  Done");
 		}
-
-		if($table === 'attribute' || $table === 'all') {
+		
+		if ($table === 'attribute' || $table === 'all') {
 			$this->info("Inserting new attributes...");
 			$this->bulkInsert('X10WeaponStatsApi\Models\Attribute', $schema['attributes']);
 			$this->info("  Done");
 		}
 		
-		if($table === 'class-weapon' || $table === 'all') {
+		if ($table === 'class-weapon' || $table === 'all') {
 			$this->info("Updating class-weapon relationships...");
 			$this->refreshClassWeaponRelations($schema);
 			$this->info("  Done");
 		}
 		
-		if($table === 'weapon-instance' || $table === 'all') {
+		if ($table === 'weapon-instance' || $table === 'all') {
 			$this->info("Inserting new weaponInstances...");
 			$this->refreshWeaponInstances($weapons);
 			$this->info("  Done");
 		}
 		
-		if($table === 'weapon-instance-attribute' || $table === 'all') {
+		if ($table === 'weapon-instance-attribute' || $table === 'all') {
 			$this->info("Inserting new weapon instance attributes...");
 			$this->refreshWeaponAttributes($weapons);
 			$this->info("  Done");
@@ -91,8 +91,8 @@ class ItemSchemaUpdate extends Command
 	private function getItemSchema() {
 		$STEAM_GET_SCHEMA_URL = 'http://api.steampowered.com/IEconItems_440/GetSchema/v0001?language=en_US&key=' . env('STEAM_WEB_API_KEY');
 		
-		// $file_contents = file_get_contents($STEAM_GET_SCHEMA_URL);
-		$file_contents = file_get_contents(__DIR__ . "/get_schema_example_output.json");
+		$file_contents = file_get_contents($STEAM_GET_SCHEMA_URL);
+		// $file_contents = file_get_contents(__DIR__ . "/get_schema_example_output.json");
 		
 		return json_decode($file_contents, true);
 	}
@@ -108,7 +108,7 @@ class ItemSchemaUpdate extends Command
 	private function bulkInsert($class_name, array $raw_items, array $props = null) {
 		$pk = (new $class_name())->getKeyName();
 		$table = (new $class_name())->getTable();
-		$props = $props ?  : (new $class_name())->getFillable();
+		$props = $props ?: (new $class_name())->getFillable();
 		
 		// Get an array of existing primary keys
 		$existing_weapons = $class_name::all()->map(function ($weapon) use($pk) {
@@ -142,7 +142,7 @@ class ItemSchemaUpdate extends Command
 		// We're chunking things because if its the first load and we're trying to insert
 		// 3000 weapons the SQL gets pretty darn long and sometimes it fails (on SQLite)
 		// -- deviousfrog/bumble 2015-01-31
-		foreach (array_chunk($inserts, 100) as $chunk) {
+		foreach (array_chunk($inserts, 5) as $chunk) {
 			\DB::table($table)->insert($chunk);
 		}
 	}
@@ -181,7 +181,7 @@ class ItemSchemaUpdate extends Command
 		
 		\DB::table('class_weapon')->delete();
 		
-		foreach (array_chunk($to_insert->toArray(), 100) as $chunk) {
+		foreach (array_chunk($to_insert->toArray(), 5) as $chunk) {
 			\DB::table('class_weapon')->insert($chunk);
 		}
 	}
@@ -212,7 +212,7 @@ class ItemSchemaUpdate extends Command
 		
 		\DB::table('weapon_instance')->delete();
 		
-		foreach (array_chunk($to_insert, 10) as $chunk) {
+		foreach (array_chunk($to_insert, 5) as $chunk) {
 			\DB::table('weapon_instance')->insert($chunk);
 		}
 	}
@@ -258,7 +258,7 @@ class ItemSchemaUpdate extends Command
 		
 		\DB::table('weapon_instance_attributes')->delete();
 		
-		foreach ($to_insert->chunk(100) as $chunk) {
+		foreach ($to_insert->chunk(5) as $chunk) {
 			\DB::table('weapon_instance_attributes')->insert($chunk->toArray());
 		}
 	}
@@ -270,7 +270,12 @@ class ItemSchemaUpdate extends Command
 	 */
 	protected function getArguments() {
 		return [
-			['table', InputArgument::OPTIONAL, 'desc', 'all']
+			[
+				'table',
+				InputArgument::OPTIONAL,
+				'desc',
+				'all'
+			]
 		];
 	}
 
