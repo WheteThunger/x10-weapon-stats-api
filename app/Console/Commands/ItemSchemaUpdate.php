@@ -91,8 +91,8 @@ class ItemSchemaUpdate extends Command
 	private function getItemSchema() {
 		$STEAM_GET_SCHEMA_URL = 'http://api.steampowered.com/IEconItems_440/GetSchema/v0001?language=en_US&key=' . env('STEAM_WEB_API_KEY');
 		
-		$file_contents = file_get_contents($STEAM_GET_SCHEMA_URL);
-		// $file_contents = file_get_contents(__DIR__ . "/get_schema_example_output.json");
+		//$file_contents = file_get_contents($STEAM_GET_SCHEMA_URL);
+		$file_contents = file_get_contents(__DIR__ . "/get_schema_example_output.json");
 		
 		return json_decode($file_contents, true);
 	}
