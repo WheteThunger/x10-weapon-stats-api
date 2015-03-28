@@ -16,25 +16,36 @@ Route::get('/', 'WelcomeController@index');
 Route::get('home', 'HomeController@index');
 
 Route::controllers([
-	'auth' => 'Auth\AuthController',
-	'password' => 'Auth\PasswordController',
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
 ]);
 
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
-	Route::get('/', ['as' => 'adminIndex', 'uses' => 'AdminController@getIndex']);
-	
-	Route::model('weapons', 'X10WeaponStatsApi\Models\Weapon');
-	Route::resource('weapons', 'WeaponsController');
-	
-	Route::model('attributes', 'X10WeaponStatsApi\Models\Attribute');
-	Route::resource('attributes', 'AttributesController');
-	
-	Route::model('people', 'X10WeaponStatsApi\Models\Person');
-	Route::resource('people', 'PeopleController');
-	
-	Route::model('weaponInstance', 'X10WeaponStatsApi\Models\WeaponInstance');
-	Route::resource('weapon-instance', 'WeaponInstancesController');
-	
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
+    Route::get('/', ['as' => 'adminIndex', 'uses' => 'AdminController@getIndex']);
+
+    Route::model('weapons', 'X10WeaponStatsApi\Models\Weapon');
+    Route::resource('weapons', 'WeaponsController');
+
+    Route::model('attributes', 'X10WeaponStatsApi\Models\Attribute');
+    Route::resource('attributes', 'AttributesController');
+
+    Route::model('people', 'X10WeaponStatsApi\Models\Person');
+    Route::resource('people', 'PeopleController');
+
+    Route::model('weaponInstance', 'X10WeaponStatsApi\Models\WeaponInstance');
+    Route::resource('weapon-instance', 'WeaponInstancesController');
+
 });
 
+Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\v1'], function () {
+    Route::get('/graph', [
+        'as'   => 'api.graph.list',
+        'uses' => 'ApiController@getGraphList'
+    ]);
+    
+    Route::get('/sample_get_schema_output', [
+    'as'   => 'api.sample.output',
+    'uses' => 'ApiController@sampleOutput'
+        ]);
+});

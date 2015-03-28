@@ -1,0 +1,39 @@
+{
+	"generated_at": "2015-01-01 00:00:00",
+	"insert whatever": "metadata here",
+	"results": {
+		"configs": [
+			{
+				"id": "1",
+				"name": "master",
+				"parent_id": null,
+				"people": [
+					{
+						"id": "1",
+						"name": "Bumble",
+						"tf2items_id": "STEAM_0:0:1023984019",
+						"weapon_instances": [
+							{
+								"id": "1",
+								"weapon_defindex": "0",
+								"name": "TF_WEAPON_BAT",
+								"weapon_instance_attributes": [
+									{
+										"attribute_defindex": "292",
+										"attribute_value": "3",
+										"name": "kill eater score type",
+										"attribute_class": "kill_eater_score_type",
+										"description_string": "+%s1% faster firing speed",
+										"description_format": "value_is_inverted_percentage",
+										"effect_type": "positive",
+										"hidden": "1"
+									}
+								]
+							}
+						]
+					}
+				]
+			}
+		]
+	}
+}

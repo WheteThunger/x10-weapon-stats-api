@@ -21,8 +21,9 @@ class InitialSchema extends Migration {
 	    
 		Schema::create('people', function(Blueprint $table) {
 			$table->increments('id');
-			$table->string('name')->unique();
-			$table->string('tf2items_id')->unique();
+            $table->integer('config_id');
+			$table->string('name');
+			$table->string('tf2items_id');
 			$table->timestamps();
 		});
 		
@@ -69,12 +70,11 @@ class InitialSchema extends Migration {
 		});
 		
 		Schema::create('weapon_instance', function(Blueprint $table) {
-			$table->integer('id');
+			$table->integer('id')->unique();
 			$table->primary('id');
-			$table->integer('config_id');
 			$table->integer('person_id');
 			$table->integer('weapon_defindex');
-			$table->unique(['config_id', 'person_id', 'weapon_defindex']);
+			$table->unique(['person_id', 'weapon_defindex']);
 			$table->timestamps();
 		});
 		
@@ -104,7 +104,7 @@ class InitialSchema extends Migration {
 		Schema::dropIfExists('classes');
 		Schema::dropIfExists('class_weapon');
 		Schema::dropIfExists('weapon_instance');
-		Schema::dropIfExists('weapon_instance_attribute');
+		Schema::dropIfExists('weapon_instance_attributes');
 	}
 
 }

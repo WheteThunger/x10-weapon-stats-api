@@ -11,4 +11,9 @@ class Config extends Model {
 	    'parent_id'
 	];
 
+    public function people()
+    {
+        return $this->hasMany('X10WeaponStatsApi\Models\Person', 'config_id');
+    }
+
 }
