@@ -70,20 +70,18 @@ class InitialSchema extends Migration {
 		});
 		
 		Schema::create('weapon_instance', function(Blueprint $table) {
-			$table->integer('id')->unique();
-			$table->primary('id');
+			$table->increments('id');
 			$table->integer('person_id');
 			$table->integer('weapon_defindex');
 			$table->unique(['person_id', 'weapon_defindex']);
 			$table->timestamps();
 		});
-		
+
 		Schema::create('weapon_instance_attributes', function (Blueprint $table) {
-		    $table->integer('id');
-		    $table->primary('id');
+		    $table->increments('id');
 		    $table->integer('weapon_instance_id');
 		    $table->integer('attribute_defindex');
-		    $table->unique(['weapon_instance_id', 'attribute_defindex']);
+		    $table->unique(['weapon_instance_id', 'attribute_defindex'], 'weapon_instance_attributes_unique');
 		    $table->string('attribute_value');
 		    $table->timestamps();
 		});
