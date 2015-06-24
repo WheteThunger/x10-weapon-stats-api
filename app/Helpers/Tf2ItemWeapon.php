@@ -39,7 +39,7 @@ class Tf2ItemWeapon {
 
     public function printValue($depth = 0)
     {
-        return 'not implemented';
+    	return 'not implemented';
     }
 
 }

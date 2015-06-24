@@ -36,7 +36,7 @@ class Tf2ItemParty {
         $value_str = 'not implemented';
 
         foreach($this->value as $weapon) {
-
+			$value_str += $weapon->defindex;
         }
 
 

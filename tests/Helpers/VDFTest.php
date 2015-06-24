@@ -10,6 +10,7 @@ class VDFTest extends TestCase
 
     public function testReadWriteSingleEntry()
     {
+    	die("i did a hing");
         $vdf = VDF::makeFromVDFFile(__DIR__ . '/vdf_files/single_entry.vdf');
 
         $normalized_output = $this->normalizeOutput($vdf->generateVDFFile());
