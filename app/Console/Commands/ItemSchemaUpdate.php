@@ -213,7 +213,12 @@ class ItemSchemaUpdate extends Command
 		\DB::table('weapon_instance')->delete();
 		
 		foreach (array_chunk($to_insert, 5) as $chunk) {
-			\DB::table('weapon_instance')->insert($chunk);
+			try {
+				\DB::table('weapon_instance')->insert($chunk);
+			}
+			catch (Exception $e) {
+				echo $e->getMessage();
+			}
 		}
 	}
 
