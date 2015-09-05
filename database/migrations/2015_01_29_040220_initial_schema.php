@@ -73,7 +73,8 @@ class InitialSchema extends Migration {
 			$table->increments('id');
 			$table->integer('person_id');
 			$table->integer('weapon_defindex');
-			$table->unique(['person_id', 'weapon_defindex']);
+			//$table->unique(['person_id', 'weapon_defindex']);
+			// I believe this causes the id column to be type integer instead of serial
 			$table->timestamps();
 		});
 
