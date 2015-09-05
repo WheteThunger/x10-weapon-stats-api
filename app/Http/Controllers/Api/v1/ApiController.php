@@ -7,6 +7,8 @@ use X10WeaponStatsApi\Models\Person;
 use X10WeaponStatsApi\Models\WeaponInstance;
 use X10WeaponStatsApi\Models\WeaponInstanceAttribute;
 use X10WeaponStatsApi\Models\Attribute;
+use X10WeaponStatsApi\Models\Weapon;
+use Illuminate\Support\Facades\Schema;
 
 class ApiController extends Controller
 {
@@ -20,7 +22,6 @@ class ApiController extends Controller
             ]
             
         ]);
-        
         
     }
     
@@ -41,6 +42,32 @@ class ApiController extends Controller
     		'generated_at' => (new \DateTime)->format('Y-m-d H:i:s'),
     		'results' => [
     			'attributes' => $attributes->toArray()
+    		]
+    	]);
+    }
+    
+    public function getWeaponList()
+    {
+    	$weapons = Weapon::all([
+    		'defindex',
+    		'name',
+    		'item_class',
+    		'item_type_name',
+    		'item_name',
+    		'item_description',
+    		'proper_name',
+    		'item_slot',
+    		'item_quality',
+    		'image_url',
+    		'image_url_large',
+    		'min_ilevel',
+    		'max_ilevel'
+    	]);
+    	
+    	return \response()->json([
+    		'generated_at' => (new \DateTime)->format('Y-m-d H:i:s'),
+    		'results' => [
+    			'weapons' => $weapons->toArray()
     		]
     	]);
     }

@@ -49,6 +49,11 @@ Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\v1'], function () {
     	'uses' => 'ApiController@getAttributeList'
     ]);
     
+    Route::get('/weapons', [
+    	'as' => 'api.weapons.list',
+    	'uses' => 'ApiController@getWeaponList'
+    ]);
+    
     Route::get('/sample_get_schema_output', [
     'as'   => 'api.sample.output',
     'uses' => 'ApiController@sampleOutput'
