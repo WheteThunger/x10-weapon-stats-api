@@ -6,6 +6,7 @@ use X10WeaponStatsApi\Models\Config;
 use X10WeaponStatsApi\Models\Person;
 use X10WeaponStatsApi\Models\WeaponInstance;
 use X10WeaponStatsApi\Models\WeaponInstanceAttribute;
+use X10WeaponStatsApi\Models\Attribute;
 
 class ApiController extends Controller
 {
@@ -23,6 +24,27 @@ class ApiController extends Controller
         
     }
     
+    public function getAttributeList()
+    {
+    	$attributes = Attribute::all([
+    		'defindex',
+    		'name',
+    		'attribute_class',
+    		'description_string',
+    		'description_format',
+    		'effect_type',
+    		'hidden',
+    		'stored_as_integer'
+    	]);
+    	
+    	return \response()->json([
+    		'generated_at' => (new \DateTime)->format('Y-m-d H:i:s'),
+    		'results' => [
+    			'attributes' => $attributes->toArray()
+    		]
+    	]);
+    }
+    
     protected function removeProps($collection, $props) {
         foreach($props as $prop) {
             foreach($collection as $key => $item) {
@@ -35,17 +57,11 @@ class ApiController extends Controller
         $configs = Config::with('people.weaponInstances')->get();
         
         $query = \DB::table('weapon_instance_attributes')
-        ->join('attributes', 'weapon_instance_attributes.attribute_defindex', '=', 'attributes.defindex')
         ->select([
             'weapon_instance_attributes.weapon_instance_id',
             'weapon_instance_attributes.attribute_defindex',
             'weapon_instance_attributes.attribute_value',
-            'attributes.name',
-            'attributes.attribute_class',
-            'attributes.description_string',
-            'attributes.description_format',
-            'attributes.effect_type',
-            'attributes.hidden',
+
         ]);
         
         $attrInstances = $query->get();
@@ -78,7 +94,7 @@ class ApiController extends Controller
         
                 $person->weaponInstances->each(function($weapon_instance) use($attrMap, $weaponNameMap) {
         
-                    $weapon_instance->name = $weaponNameMap[$weapon_instance->weapon_defindex];
+                    //$weapon_instance->name = $weaponNameMap[$weapon_instance->weapon_defindex];
         
                     if(array_key_exists($weapon_instance->id, $attrMap)) {
                         $weapon_instance->weapon_instance_attributes = $attrMap[$weapon_instance->id];

@@ -44,8 +44,27 @@ Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\v1'], function () {
         'uses' => 'ApiController@getGraphList'
     ]);
     
+    Route::get('/attributes', [
+    	'as' => 'api.attributes.list',
+    	'uses' => 'ApiController@getAttributeList'
+    ]);
+    
     Route::get('/sample_get_schema_output', [
     'as'   => 'api.sample.output',
     'uses' => 'ApiController@sampleOutput'
         ]);
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
