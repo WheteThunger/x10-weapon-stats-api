@@ -4,6 +4,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Config extends Model {
 
+    const MASTER_NAME = "master";
+
     protected $primaryKey = 'id';
     
 	protected $fillable = [

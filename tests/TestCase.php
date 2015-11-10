@@ -17,7 +17,11 @@ if(!class_exists("TestCase")) {
 	
 			return $app;
 		}
-	
+		
+		public function testTrue() {
+			$this->assertEquals(true, true);
+		}
+
 	}
 
 }

@@ -8,6 +8,11 @@ use X10WeaponStatsApi\Commands\ReadTf2ItemsFile;
 
 use X10WeaponStatsApi\Helpers\VDF;
 
+use X10WeaponStatsApi\Models;
+
+
+use X10WeaponStatsApi\Helpers\VDFTree\VDFTree;
+
 class Tf2ItemsReadFile extends Command {
 
 	/**
@@ -42,10 +47,20 @@ class Tf2ItemsReadFile extends Command {
 	public function fire()
 	{
 	    $file = $this->argument('tf2items_file');
-		$collection = VDF::makeFromVDFFile($file);
+	    
+	    $tree = new VDFTree($file);
+	    
+	    $config = Models\Config::where('name', '=', 'master')->get()->first();
+	    
+	    $tree->writeToDatabase($config);
+	    
+	   // dd($tree->tree);
+	    
+	    
+// 		$collection = VDF::makeFromVDFFile($file);
 		
-		$output = $collection->generateVDFFile();
-		dd($output);
+// 		$output = $collection->generateVDFFile();
+// 		dd($output);
 	}
 
 	/**

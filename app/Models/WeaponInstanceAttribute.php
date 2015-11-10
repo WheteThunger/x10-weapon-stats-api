@@ -2,9 +2,8 @@
 
 namespace X10WeaponStatsApi\Models;
 
-use Illuminate\Database\Eloquent\Model;
 
-class WeaponInstanceAttribute extends Model
+class WeaponInstanceAttribute extends BaseModel
 {
     
     protected $fillable = [
@@ -13,15 +12,17 @@ class WeaponInstanceAttribute extends Model
         'attribute_value',
         
     ];
-    
-    protected $appends = [
-        'attribute_name',
-        'attribute_class',
-        'description_string',
-        'description_format',
-        'effect_type',
-        'hidden',
-    ];
+
+    // If you don't define accessor methods for each property in here an exception is thrown whenever you call
+    // one of `toArray` or `toJson`. Its too bad it doesn't check if the method exists....fucking casuals
+//    protected $appends = [
+//        'attribute_name',
+//        'attribute_class',
+//        'description_string',
+//        'description_format',
+//        'effect_type',
+//        'hidden',
+//    ];
     
     public function weaponInstance()
     {

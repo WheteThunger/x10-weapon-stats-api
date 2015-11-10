@@ -11,10 +11,12 @@ class Kernel extends ConsoleKernel {
 	 * @var array
 	 */
 	protected $commands = [
-		'X10WeaponStatsApi\Console\Commands\Inspire',
-		'X10WeaponStatsApi\Console\Commands\ItemSchemaUpdate',
-	    'X10WeaponStatsApi\Console\Commands\Tf2ItemsReadFile',
-	    'X10WeaponStatsApi\Console\Commands\Tf2ItemsWriteFile',
+//		\X10WeaponStatsApi\Console\Commands\Inspire::class,
+		\X10WeaponStatsApi\Console\Commands\ItemSchemaUpdate::class,
+//		\X10WeaponStatsApi\Console\Commands\Tf2ItemsReadFile::class,
+//		\X10WeaponStatsApi\Console\Commands\Tf2ItemsWriteFile::class,
+		\X10WeaponStatsApi\Console\Commands\ImportToDB::class
+
 	];
 
 	/**
