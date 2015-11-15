@@ -122,4 +122,7 @@ class VDFTree {
 		$this->tree = $people_tree;
 	}
 
+    public function getVDFArray() {
+        return $this->vdf_array;
+    }
 }

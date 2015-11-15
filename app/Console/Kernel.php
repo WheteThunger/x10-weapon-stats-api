@@ -3,6 +3,8 @@
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
+use X10WeaponStatsApi\Console\Commands;
+
 class Kernel extends ConsoleKernel {
 
 	/**
@@ -11,12 +13,9 @@ class Kernel extends ConsoleKernel {
 	 * @var array
 	 */
 	protected $commands = [
-//		\X10WeaponStatsApi\Console\Commands\Inspire::class,
-		\X10WeaponStatsApi\Console\Commands\ItemSchemaUpdate::class,
-//		\X10WeaponStatsApi\Console\Commands\Tf2ItemsReadFile::class,
-//		\X10WeaponStatsApi\Console\Commands\Tf2ItemsWriteFile::class,
-		\X10WeaponStatsApi\Console\Commands\ImportToDB::class
-
+		Commands\ItemSchemaUpdate::class,
+		Commands\ImportToDB::class,
+        Commands\GenerateTf2ItemsFile::class
 	];
 
 	/**
@@ -27,8 +26,9 @@ class Kernel extends ConsoleKernel {
 	 */
 	protected function schedule(Schedule $schedule)
 	{
-		$schedule->command('inspire')
-				 ->hourly();
+//		$schedule
+//            ->command('inspire')
+//            ->hourly();
 	}
 
 }

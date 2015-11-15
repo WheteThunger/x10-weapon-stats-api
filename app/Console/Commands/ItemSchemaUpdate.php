@@ -31,7 +31,7 @@ class ItemSchemaUpdate extends Command
 	 *
 	 * @var string
 	 */
-	protected $description = 'Pull in the item schema and update the db. Updates weapons, attributes, and class_weapon';
+	protected $description = 'Pull in the item schema and update the db';
 
 	/**
 	 * Create a new command instance.
@@ -40,9 +40,11 @@ class ItemSchemaUpdate extends Command
 	 */
 	public function __construct() {
 		parent::__construct();
-
-
 	}
+
+    public function write($text) {
+        $this->output->write("<info>$text</info>");
+    }
 
 	/**
 	 * Execute the console command.
@@ -50,9 +52,11 @@ class ItemSchemaUpdate extends Command
 	 * @return mixed
 	 */
 	public function fire() {
-		$table = $this->argument('table');
+        // Speed up mysql inserts for easier developement.
+        \DB::unprepared("SET autocommit=0; SET unique_checks=0; foreign_key_checks=0;");
+        $table = $this->argument('table');
 
-		$this->info('Getting item schema from steam...');
+		$this->write('Getting item schema from steam...');
 		$schema = $this->getItemSchema()['result'];
 		$this->info("  Done");
 
@@ -61,34 +65,36 @@ class ItemSchemaUpdate extends Command
 		$weapons = $weapons->toArray();
 
 		if ($table === 'weapon' || $table === 'all') {
-			$this->info("Inserting new weapons...");
+			$this->write("Inserting new weapons...");
 			$this->bulkInsert('X10WeaponStatsApi\Models\Weapon', $weapons);
 			$this->info("  Done");
 		}
 
 		if ($table === 'attribute' || $table === 'all') {
-			$this->info("Inserting new attributes...");
+			$this->write("Inserting new attributes...");
 			$this->bulkInsert('X10WeaponStatsApi\Models\Attribute', $schema['attributes']);
 			$this->info("  Done");
 		}
 
 		if ($table === 'class-weapon' || $table === 'all') {
-			$this->info("Updating class-weapon relationships...");
+			$this->write("Updating class-weapon relationships...");
 			$this->refreshClassWeaponRelations($schema);
 			$this->info("  Done");
 		}
 
 		if ($table === 'weapon-instance' || $table === 'all') {
-			$this->info("Inserting new weaponInstances...");
+			$this->write("Inserting new weaponInstances...");
 			$this->refreshWeaponInstances($weapons);
 			$this->info("  Done");
 		}
 
 		if ($table === 'weapon-instance-attribute' || $table === 'all') {
-			$this->info("Inserting new weapon instance attributes...");
+			$this->write("Inserting new weapon instance attributes...");
 			$this->refreshWeaponAttributes($weapons);
 			$this->info("  Done");
 		}
+
+        \DB::unprepared("COMMIT; SET unique_checks=1; foreign_key_checks=1;");
 	}
 
 	private function getItemSchema() {
@@ -142,12 +148,7 @@ class ItemSchemaUpdate extends Command
 
 		$count = count($inserts);
 
-		// We're chunking things because if its the first load and we're trying to insert
-		// 3000 weapons the SQL gets pretty darn long and sometimes it fails (on SQLite)
-		// -- deviousfrog/bumble 2015-01-31
-		foreach (array_chunk($inserts, 5) as $chunk) {
-			\DB::table($table)->insert($chunk);
-		}
+        \DB::table($table)->insert($inserts);
 	}
 
 	/*
@@ -184,18 +185,11 @@ class ItemSchemaUpdate extends Command
 
 		\DB::table('class_weapon')->delete();
 
-		foreach (array_chunk($to_insert->toArray(), 5) as $chunk) {
-			\DB::table('class_weapon')->insert($chunk);
-		}
+		\DB::table('class_weapon')->insert($to_insert->toArray());
 	}
 
 	protected function refreshWeaponInstances($weapons) {
 		$everyone_person_id = $this->getEveryonePersonId();
-		// $attribute_defindex_map = Attribute::all(['defindex', 'name'])->keyBy('name');
-
-		// $weapons = array_filter($weapons, function ($weapon) {
-		// return array_key_exists("attributes", $weapon) && is_array($weapon["attributes"]);
-		// });
 
 		$to_insert = [];
 
@@ -212,14 +206,12 @@ class ItemSchemaUpdate extends Command
 
 		\DB::table('weapon_instance')->delete();
 
-		foreach (array_chunk($to_insert, 5) as $chunk) {
-			try {
-				\DB::table('weapon_instance')->insert($chunk);
-			}
-			catch (Exception $e) {
-				echo $e->getMessage();
-			}
-		}
+        try {
+            \DB::table('weapon_instance')->insert($to_insert);
+        }
+        catch (Exception $e) {
+            echo $e->getMessage();
+        }
 	}
 
 	protected function refreshWeaponAttributes($weapons) {
@@ -232,7 +224,7 @@ class ItemSchemaUpdate extends Command
 			$attribute_map[$attribute->name] = $attribute->defindex;
 		}
 
-		$to_insert = new Collection();
+		$to_insert = [];
 
 		$weapons = array_filter($weapons, function ($weapon) {
 			return array_key_exists('attributes', $weapon);
@@ -240,8 +232,6 @@ class ItemSchemaUpdate extends Command
 
 		foreach ($weapons as $weapon) {
 			foreach ($weapon['attributes'] as $attribute) {
-				// $weapon_defindex = Weapon::where(['name' => $weapon['name']])->first()->defindex;
-
 				$weapon_instance_id = WeaponInstance::where([
 					'weapon_defindex' => $weapon['defindex'],
 					'person_id' => $everyone_person_id
@@ -251,21 +241,19 @@ class ItemSchemaUpdate extends Command
 
 				$now = (new \DateTime())->format('Y-m-d H:i:s');
 
-				$to_insert->push([
+				$to_insert[] = [
 					'weapon_instance_id' => $weapon_instance_id,
 					'attribute_defindex' => $attribute_defindex,
 					'attribute_value' => $attribute['value'],
 					'created_at' => $now,
 					'updated_at' => $now
-				]);
+				];
 			}
 		}
 
 		\DB::table('weapon_instance_attributes')->delete();
 
-		foreach ($to_insert->chunk(5) as $chunk) {
-			\DB::table('weapon_instance_attributes')->insert($chunk->toArray());
-		}
+		\DB::table('weapon_instance_attributes')->insert($to_insert);
 	}
 
 	/**

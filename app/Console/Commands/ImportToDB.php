@@ -19,6 +19,7 @@ class ImportToDB extends Command
 
     public function fire()
     {
+        $start_time = microtime(true);
         $file = $this->argument('tf2items_file');
         $tree = new VDFTree($file);
 
@@ -28,9 +29,14 @@ class ImportToDB extends Command
             throw new \DomainException('Unable to locate master database');
         }
 
-        $this->dispatch(
-            new ImportFileToDB($tree, $config)
-        );
+        $this->dispatch(new ImportFileToDB($tree, $config));
+
+        $end_time = microtime(true);
+
+        $duration = ($end_time - $start_time) * 1000;
+        $duration = round($duration, 0);
+
+        $this->info("Execution time: $duration ms");
     }
 
     protected function getArguments()
