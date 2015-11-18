@@ -1,8 +1,5 @@
 <?php namespace X10WeaponStatsApi\Commands;
 
-use Illuminate\Support\Collection;
-use X10WeaponStatsApi\Commands\Command;
-
 use Illuminate\Contracts\Bus\SelfHandling;
 
 use X10WeaponStatsApi\Helpers\VDFTree\VDFTree;
@@ -14,6 +11,7 @@ use X10WeaponStatsApi\Models\WeaponInstanceAttribute;
 use Illuminate\Database\Query\Builder as QueryBuilder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Database\DatabaseManager;
+use Illuminate\Console\Command;
 
 class ImportFileToDB extends Command implements SelfHandling
 {
@@ -21,16 +19,19 @@ class ImportFileToDB extends Command implements SelfHandling
     private $tree;
     private $config;
 
+    /** @var \X10WeaponStatsApi\Commands\Command  */
+    private $command;
+
     /**
      * Create a new command instance.
      *
      * @return void
      */
-    public function __construct(VDFTree $tree, Config $config)
+    public function __construct(VDFTree $tree, Config $config, Command $command)
     {
         $this->tree = $tree;
         $this->config = $config;
-
+        $this->command = $command;
     }
 
     /**
@@ -112,6 +113,23 @@ class ImportFileToDB extends Command implements SelfHandling
                             "created_at" => $now
                         ];
                     }
+                }
+            }
+        }
+
+        foreach($inserts_instance_attribute as $key_outer => $insert_outer) {
+            foreach($inserts_instance_attribute as $key_inner => $insert_inner) {
+                if( $key_outer <> $key_inner
+                    && $insert_outer["weapon_instance_id"] === $insert_inner["weapon_instance_id"]
+                    && $insert_outer["attribute_defindex"] === $insert_inner["attribute_defindex"]) {
+
+                    $weapon_id = $insert_outer["weapon_instance_id"];
+                    $attr_defindex = $insert_outer["attribute_defindex"];
+                    $this->command->error("Found the same weapon attribute multiple times for the same weapon. weapon_instance_id=$weapon_id and attribute_defindex=$attr_defindex. Used the last one encountered.");
+
+                    $smaller = min($key_inner, $key_outer);
+
+                    unset($inserts_instance_attribute[$smaller]);
                 }
             }
         }

@@ -54,6 +54,16 @@
 	           Person Create
 	       </a>
       </li>
+        <li>
+            <a href="{{ route('admin.configs.index') }}">
+                Config List
+            </a>
+        </li>
+        <li>
+            <a href="{{ route('admin.configs.create') }}">
+                Config Create
+            </a>
+        </li>
 	</nav>
 	<main> @yield('content') </main>
 

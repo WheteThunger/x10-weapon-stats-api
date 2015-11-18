@@ -1,0 +1,2155 @@
+//[ST:SYNC] tf2items.weapons_FF.txt
+//[ST:LOCAL] tf2items.weapons.txt
+//FREAK FORTRESS STATS
+"custom_weapons_v3"
+{
+    "*"
+	{
+		"237" // Rocket Jumper
+		{
+			"1"				"134 ; 2" // Particle Effect
+            "2"             "181 ; 2" // Self Damage Text, no effect
+            "3"             "476 ; -1" // Damage bonus hidden
+            "4"             "318 ; 0.1" // Reload Time
+            "5"             "4  ;  10" // Clip size bonus
+			"6"             "76 ; 10" // MaxAmmo count
+			"7"             "128 ; 1"       //Provide on active
+			"8"             "169 ; 0.1" // Reduced sentry damage
+			"9" 			"275 ; 1" //No fall damage
+		}
+        "265" // Sticky Jumper
+		{
+			"1"				"134 ; 2" // Particle Effect
+            "2"             "181 ; 2" // Self Damage Text, no effect
+            "3"             "476 ; -1" // Damage bonus hidden
+            "4"             "318 ; 0.1" // Reload Time
+            "5"             "4  ;  10" // Clip size bonus
+			"6"				"275 ; 1" //Fall damage prevention
+            "7"             "78 ; 10"       // MaxAmmo count
+			"8"				"88 ; 8" // max pipebombs increased
+		}
+		"730" // Beggars
+		{
+            "1"             "411 ; 10" 		//Angle Penalty
+            "2"             "4  ;  20" 		/// Clip size bonus
+            "3"             "76 ; 10" 		// MaxAmmo count
+            "4"             "413 ; 1" 		//Auto-Fire Clip
+            "5"             "417 ; 1"		 //Can Overload
+            "6"             "394 ; 0.07" 	//Fire Rate increase hidden
+            "7"             "241 ; 0.55" 	//Reload increase hidden
+            "8"             "15 ; 0" 		//Crits Disabled
+			"9"				"214 ; 1" 		// strange counter
+        }
+        "18" // stock Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  	//Speed decrease
+            "2"             "99 ; 1" 		//Splash Increase
+            "3"             "2 ; 5" 		//Damage increase
+			"4"             "97 ;  1.4"    	//Reload Decrease
+            "5"             "3 ;  0.25"    	//Clip size Penalty
+            "6"             "15 ; 1" 		//Crits Disabled
+			"7"				"214 ; 1" 		// strange counter
+        }
+        "127" // Direct Hit
+		{
+            "1"             "103 ; 3.5"    //Speed Increase DO NOT INCREASE causes errors if any higher
+            "2"             "100 ; 0.01" //Splash decrease
+            "3"             "2 ; 3" //Damage increase
+            "4"             "114 ; 1" //mini-crit airborn
+			"5"				"214 ; 1" // strange counter
+			"6"				"215 ; 60" // apply Z velocity
+        }
+        "414" // Liberty
+		{
+            "1"             "103 ; 1.5"    //Speed Increase DO NOT INCREASE causes errors if any higher
+            "2"             "6 ; 0.5"       //Fire rate increase
+			"3"             "76 ; 2" // MaxAmmo count
+			"4"				"488 ; 1" // Rocket specialist
+			"5"				"214 ; 1" // strange counter
+        }
+        "228"  // Black Box
+		{
+            //"1"             "26 ;   100"     // Health increase
+            "1"             "16  ;  150"    // Health on hit
+            "2"             "5  ;  1"    // Fire rate penalty
+            "3"             "180  ;  150"    // Heal on kill
+            "4"             "3 ;  0.75"    //Clip size Penalty
+			"5"				"214 ; 1" // strange counter
+        }
+		"1085"  // Festive Black Box
+		{
+            //"1"             "26 ;   100"     // Health increase
+            "1"             "16  ;  150"    // Health on hit
+            "2"             "5  ;  1"    // Fire rate penalty
+            "3"             "180  ;  150"    // Heal on kill
+            "4"             "3 ;  0.75"    //Clip size Penalty
+			"5"				"214 ; 1" // strange counter
+        }
+        "441" // Cow mangler
+		{
+            "1"             "28  ;  1"      // No random crits
+            "2"             "281  ;  1"      // energy weapon
+            "3"             "103 ; 2.5"    //Speed Increase
+			"4"             "3 ;  0.25"    //Clip size Penalty
+			"5"             "318 ; 0.05" // Reload Time
+			"6"				"285 ; 1" // can not reflect
+			"7"				"75 ; 10" // Aimming Speed Increase
+			"8"				"214 ; 1" // strange counter
+
+        }
+        "444" // Mantreads
+		{
+            "1"             "259  ;  1"      // Goomba Stomp
+            "2"             "2 ; 500"         //Damage increase
+			"3"				"129 ; 10" // Health Regen
+			"4"				"214 ; 1" // strange counter
+        }
+        "21" // FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+			"4"				"214 ; 1" // strange counter
+        }
+		"40" // Backburner
+		{
+            "1"             "255 ; 3" //Airblast force
+            "2"             "256  ;  2" // Refire Time Airblast
+            "3"             "24  ;  1" // Crits from behind with flamethrower
+			"4"             "162  ;  1.5" // Flame spread
+			"5"             "164  ;  1.5" // Flame distance
+			"6"				"214 ; 1" // strange counter
+        }
+		"1146" // Festive Backburner
+		{
+            "1"             "255 ; 3" //Airblast force
+            "2"             "256  ;  2" // Refire Time Airblast
+            "3"             "24  ;  1" // Crits from behind with flamethrower
+			"4"             "162  ;  1.5" // Flame spread
+			"5"             "164  ;  1.5" // Flame distance
+			"6"				"214 ; 1" // strange counter
+        }
+        "351" // Detonator
+		{
+            "1"             "58 ; 2.5"    //Self Damage push
+            "2"             "144 ; 1"   //Lunch Box Crits
+            "3"				"275 ; 1" 	//  Fall damage prevention
+			"4"             "318 ; 0.5" // Reload Time
+			"5"             "78 ; 3"    // maxammo secondary increased
+			"6"				"214 ; 1" // strange counter
+	     }
+		"740" // Scorch Shot
+		{
+            "1" 				"99 ; 3" // Blast radius increased
+            "2"					"25 ; 0.5" // hidden secondary max ammo penalty
+            "3"					"416 ; 3" // mod flaregun fires pellets with knockback
+			"4"					"72 ; .5" // burn damage decreased
+			"5"					"74 ; .5" // burn time decreased
+			"6"					"214 ; 1" // strange counter
+		}
+		"39" // FlareGun
+		{
+			"1"				"6 ; 0.25" 		//Fire Rate Bonus
+			"2"             "78 ; 3"    // maxammo secondary increased
+			"3"				"214 ; 1" // strange counter
+		}
+		"1081" // Festive FlareGun
+		{
+			"1"				"6 ; 0.25" 		//Fire Rate Bonus
+			"2"             "78 ; 3"    // maxammo secondary increased
+			"3"				"214 ; 1" // strange counter
+		}
+		"595" // manmelter
+		{
+			"1"             "103 ; 1.9"    //Speed Increase DO NOT INCREASE causes errors if any higher
+			"2"             "350 ; 1"    //raggdolls become ash
+			"3"             "96 ; 0.8" //Reload increase
+			"4"             "6 ; 0.8"  //Fire rate increase
+			"5"				"2 ; 2"  // Damage Bonus
+			"6"				"74 ; 0"  // Afterburn duration
+			"7"				"20 ; 1"  // Crit vs burning
+			"8"				"367 ; 1"  // extinguish gives crits
+			"9"             "28  ;  0"      // No random crits
+			"10"			"214 ; 1" // strange counter
+		}
+		"415" // Reserve shooter
+		{
+			"1"				"178 ; 0.05"  // Weapon Switch Decrease
+			"2"				"265 ; 60" // mini crit airborne
+			"3"				"214 ; 1" // strange counter
+			"4"             "6 ; 0.75"  //Fire rate increase
+            "5"             "96 ; 0.75" //Reload increase
+		}
+		"2" // Fire Axe
+		{
+			"1"				"178 ; .5"  // Weapon Switch Decrease
+			"2"				"2 ; 1.5"  // Damage Bonus
+			"3"				"267 ; 1" // Crit When Airborne
+			"4"				"214 ; 1" // strange counter
+		}
+        "348" // Volcano Fragment
+		{
+			"1"				"208 ; 1"  // Ignite
+			"2"				"20 ; 1"   // Crit vs Burning
+            "3"             "6 ; 0.3"  //Fire rate increase
+            "4"             "1 ; 0.5"  //Damage penalty
+			"5"				"214 ; 1" // strange counter
+		}
+		"214" // Powerjack
+		{
+			"1"             "26 ;   100"     // Health increase
+            "2"             "180  ;  150"    // Heal on kill
+			"3"				"107 ; 1.17" // move speed bonus
+			"4"				"214 ; 1" // strange counter
+			//"5"				"412 ; 1" // reduced to normal damage
+			//"6"				"62 ; 1" // reduced crit damage to balance out default code
+		}
+		"215" // Degreaser
+		{
+			"1"				"178 ; .2" // deploy time decreased
+			"2"             "26 ;  25"     // Health increase
+			"3"				"107 ; 1.1" // move speed bonus
+			"4"	           	"57 ; 5"     // Health regen
+			"5"				"214 ; 1" // strange counter
+			//"2"				"66 ; 0.5" // dmg taken from bullets reduced
+		}
+		"326" // Back Scratcher
+		{
+			"1"				"69 ; 0" // health from healers reduced
+			"2"				"2 ; 3"  // Damage Bonus
+			"3"				"108 ; 3" // health from packs increased
+			"4"				"214 ; 1" // strange counter
+		}
+		"153" // Homewrecker
+		{
+			"1"				"137 ; 10" // dmg bonus vs buildings
+			"2"				"146 ; 1" // damage applies to sappers
+            "3"             "169 ; 0.1" // Reduced sentry damage
+            "4"				"2 ; 1"  // Damage Bonus
+			"5"             "252  ;  0.01"   // Force Reduction
+			"6"				"214 ; 1" // strange counter
+			"7"           	"128 ; 1"       //Provide on active
+			"8"				"67 ; 1.5" // dmg taken from bullets increased
+			"9"				"206 ; 3"	 // dmg from melee increased
+		}
+		"813" // Neon Annihilator
+		{
+			"1"				"146 ; 1" // damage applies to sappers
+			"2"				"438 ; 1" // crit vs wet players
+			"3"				"2 ; 2"  // Damage Bonus
+			"4"				"214 ; 1" // strange counter
+		}
+		"38" // Axtinguisher
+		{
+			"1"				"20 ; 1" // crit vs burning players
+			"2" 			"21 ; 0" //	dmg penalty vs nonburning
+			"3"				"22 ; 1" // no crit vs nonburning
+			"4"				"2 ; 1.5"  // Damage Bonus
+			"5"				"638 ; 0" // minicrit front, crit behind
+			"6"				"214 ; 1" // strange counter
+		}
+		"593" // Third Degree
+		{
+			"1"             "107 ; 1.3" // Move Speed Bonus
+            "2"             "128 ; 1"    //Provide on active
+			"3"				"360 ; 1" // damage all connected
+			"4"             "226 ;   1"     // HonorBound
+			"5"				"66 ; 0.75" // dmg taken from bullets reduced
+			"6"				"64 ; .5" // dmg taken from blast reduced
+			"7"				"2 ; 2"  // Damage Bonus
+			"8"				"214 ; 1" // strange counter
+        }
+        "412" // OVerdose
+		{
+			"1"				"144 ; 1"  // lunchboxminicrit
+            "2"             "6 ; 0.001"  //Fire rate increase
+            "3"             "1 ; 0.5"  //Damage penalty
+            "4"             "96 ; 0.3" //Reload increase
+            "5"             "3 ;  0.4"    //Clip size Penalty
+			"6"				"107 ; 1.25" // move speed bonus
+			"7"             "76 ; 2" // MaxAmmo count
+			"8"				"214 ; 1" // strange counter
+		}
+		"19" // PipeLauncher
+		{
+            "1"             "411 ; 10" //Angle Penalty
+            "2"             "4  ;  20" /// Clip size bonus
+            "3"             "76 ; 10" // MaxAmmo count
+            "4"             "413 ; 1" //Auto-Fire Clip
+            "5"             "417 ; 1" //Can Overload
+            "6"             "394 ; 0.08" //Fire Rate increase hidden
+            "7"             "241 ; 0.75" //Reload increase hidden
+            "8"             "15 ; 0" //Crits Disabled
+			"9"             "470 ; 0.5" //grenades do less damage after world contact
+			"10"			"214 ; 1" // strange counter
+        }
+        "20" // Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+			"4"				"214 ; 1" // strange counter
+        }
+        "130" // SR
+		{
+            "1"				"119 ; 1" // sticky detonate mode
+            "2"             "4  ;  4" /// Clip size bonus
+            "3"             "76 ; 10" // MaxAmmo count
+			"4"				"121 ; 1" // stickies detonate stickies
+			"5" 			"78 ; 3" // maxammo secondary increased
+			"6"				"88 ; 60" // max pipebombs increased
+			"7"				"120 ; .6" //sticky arm time penalty
+			"8"             "96 ; 0.5" //Reload increase
+			"9"             "6 ; 0.5"    //Fire rate increase
+			"10"				"214 ; 1" // strange counter
+
+        }
+        "308" // Loch
+		{
+            "1"             "103 ; 2.7"    //Speed Increase DO NOT INCREASE causes errors if any higher
+            "2"             "2 ; 4.8"     //Damage increase
+            "3"             "3 ;  0.25"    //Clip size Penalty
+            "4"             "127 ;  2"    //Die on contact
+            "5"             "207 ;  1.50"    //Blast damage to self
+            "6"             "15 ; 1" //Crits Disabled
+			"7"             "99 ; 1.1" //Splash Increase
+			"8"				"214 ; 1" // strange counter
+			"9"				"96 ; 0.7" // reload increase
+        }
+       "996" // Loose
+		{
+            "1"             "103 ; 1"       //Speed Increase DO NOT INCREASE past 2.7 causes errors if any higher
+            "2"             "4  ;  1"   	// Clip size bonus
+            "3"             "318 ; 1"     	// Reload Time
+            "4"             "6 ; 1"      	//Fire rate increase
+            "5"             "1 ; 1.5"      	//Damage penalty
+            "6"             "76 ; 5"       // MaxAmmo count
+            "7"             "15 ; 1"    	//Crits Disabled
+			"8"				"43 ; 1"  		// scattergun no reload single
+			"9"				"466 ; 1" 		// mortar mode
+			"10"			"179 ; 1" 		// minicrits become crits
+			"11"            "207 ; .25"    	//Blast damage to self
+			"12"			"15 ; 1" 		// crit mod disabled
+			"13"			"214 ; 1" 		// strange counter
+
+        }
+        "405" // Booties
+		{
+            "1"             "246 ; 10"       //Turn Control
+            "2"             "26 ;  200"     // Health increase
+        }
+        "608" // Bootleggar
+		{
+            "1"             "246 ; 10"       //Turn Control
+            "2"             "26 ;   200"     // Health increase
+        }
+        "406" // Screen
+		{
+            "1"             "247 ; 1"       //Shield bash any range
+            "2"             "248 ; 20"     // Bash does more damage
+            "3"             "60 ; 0.8"     // Dmg taken from fire reduced
+            "4"             "64 ; 0.85"     // Dmg taken from Explosive reduced
+			"5"				"214 ; 1" // strange counter
+        }
+        "131" // Targe
+		{
+            "1"             "60 ; 0.25"     // Dmg taken from fire reduced
+            "2"             "64 ; 0.25"     // Dmg taken from Explosive reduced
+			"3"             "527 ; 1"     // Afterburn immunity
+			"4"				"214 ; 1" // strange counter
+        }
+		"1144" // festive Targe
+		{
+            "1"             "60 ; 0.25"     // Dmg taken from fire reduced
+            "2"             "64 ; 0.25"     // Dmg taken from Explosive reduced
+			"3"             "527 ; 1"     // Afterburn immunity
+			"4"				"214 ; 1" // strange counter
+        }
+        "1" // Bottle
+		{
+            "1"             "394 ; 0.5"     //Fire rate increase
+			"2"				"214 ; 1" // strange counter
+        }
+        "327" // Claidhememmermemr
+		{
+            "1"             "202 ; 10"     //Charge time increase
+			"2"				"214 ; 1" // strange counter
+		}
+        "132" // Eyelander
+		{
+			"1"				"292 ; 6"	//kill eater score type
+			"2"				"388 ; 6" // kill eater kill type
+			"3"				"219 ; 1" // decapitate type
+			"4"				"214 ; 1" // strange counter
+        }
+		"1082" // Festive Eyelander
+		{
+            "1"				"292 ; 6"	//kill eater score type
+			"2"				"388 ; 6" // kill eater kill type
+			"3"				"219 ; 1" // decapitate type
+			"4"				"214 ; 1" // strange counter
+        }
+        "266" // Horseless Headless Horsemann's Headtaker
+		{
+			"1"				"292 ; 6"	//kill eater score type
+			"2"				"388 ; 6" // kill eater kill type
+			"3"				"219 ; 1" // decapitate type
+			"4"				"214 ; 1" // strange counter
+        }
+		"482" // Nessie's Nine Iron
+		{
+            "1"				"292 ; 6"	//kill eater score type
+			"2"				"388 ; 6" // kill eater kill type
+			"3"				"219 ; 1" // decapitate type
+			"4"				"214 ; 1" // strange counter
+			"5"				"215 ; 150" // Z knockback
+			"6"				"216 ; 300" // FORWARD knockback
+        }
+        "357" // zatoichi
+		{
+            "1"             "220 ;   100"     // Restore Health on kill
+            "2"             "226 ;   1"     // HonorBound
+            "3"             "180  ;  500"    // Heal on kill
+            "4"				"125 ; 150" 	// Health change
+			"5"				"140 ; -150" 	// Health Change hidden
+			"6"				"214 ; 1" // strange counter
+		}
+		"416" // Market Garden
+		{
+			"1"				"178 ; .5"  // Weapon Switch Decrease
+			"2"				"2 ; 2.5"  // Damage Bonus
+			"3"				"267 ; 1" // Crit When Airborne
+			"4"				"15 ; 0" // Critmod Disabled
+		    "5"				"5 ; 1.75" // Firerate Penalty
+		}
+		"128" // Equalizer
+		{
+			"1"				"2 ; 3.5"  // Damage Bonus
+            "2"             "128 ; 1"    //Provide on active
+		}
+		"775" // Escape Plan
+		{
+			"1"             "107 ; 1.45" // Move Speed Bonus
+            "2"             "128 ; 1"    //Provide on active
+			"3"             "414 ; 0"    //Mark of death
+			"4"             "235 ; 1"    //Escape plan speed boost
+		}
+		"447" // Disciplinary Action
+		{
+			"1"				"251 ; 1" // speed boost on ally hit
+			"2"				"1 ; 0" // Damage penalty
+			"3"				"264 ; 20" // melee range multiplier
+			"4"				"263 ; 10" // melee bound muliplier?
+			"5"             "394 ; 0.25"     //Fire rate increase
+			"6"             "107 ; 1.25" // Move Speed Bonus
+			"7"             "128 ; 1"    //Provide on active
+		}
+		"133" // Gunboats
+		{
+			"1"				"135 ; .3" // Rocket Jump Damage Reduction
+			"2"				"112 ; 0.05" // Ammo Regen
+			"3"				"107 ; 1.25" // move speed bonus
+		}
+		"354" // Concheror
+		{
+			"1"				"116 ; 3" // Mod Soldier Buff Type
+			"2"				"57 ; 15" // Health per second
+		}
+		"129" // Buff Banner
+		{
+			"1"				"116 ; 1" // Mod Soldier Buff Type
+			"2"				"357 ; 4" //increased duration
+		}
+		"226" // Battalion's Backup
+		{
+			"1"				"116 ; 2" // Mod Soldier Buff Type
+			"2"             "26 ; 100"  // Health increase
+		}
+		"811" // Huo Long Heatmaker
+		{
+			"1"				"430 ; 150" // ring of fire while aiming
+			"2" 			"431 ; 0" // uses ammo while aiming
+			"3"				"60 ; .3" // Fire damage reduced
+			"4"				"87 ; 0.5" // Minigun Spinup Time Decreased
+			"5"				"527 ; 1" // afterburn immunity
+		}
+		"15" // MiniGun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+		"424" // Tomislav
+		{
+			"1"				"107 ; 1.3" // move speed bonus
+			"2"				"1 ; 0.8" // Damage Penalty
+			"3"				"75 ; 2.13" // Aimming Speed Increase
+			"4"				"238 ; 1" // minigun no spin sounds
+			"5"				"87 ; 0.1" Minigun Spinup Time Decreased
+			"6"             "128 ; 1"       //Provide on active
+		}
+		"312" // Brassbeast
+		{
+			"1"				"2 ; 1.5" // Damage Bonus
+			"2"				"86 ; 2" // minigun spinup time increased
+			"3" 			"183 ; 0.005" // aiming movespeed decreased
+			"4"				"266 ; 1" // penetration
+			"5"			    "106 ; 0.1" // weapon spread bonus
+		}
+		"41" // Natascha
+		{
+			"1"				"1 ; 0.66" // Damage Penalty
+			"2"             "76 ; 10" // MaxAmmo count
+			"3"             "6 ; .1" //Fire rate increase
+			"4"			    "106 ; 5" // weapon spread bonus
+			"5"				"323 ; 2" // attack projectiles
+		}
+		"159" // Dalokohs Bar
+		{
+			"1"				"139 ; 1" // lunchbox adds maxhealth bonus
+			"2"				"201 ; .8" // gesture increase
+			"3"				"551 ; 1" // special taunt
+		}
+		"42" // Sandvich
+		{
+			"1" 			"200 ; 1" // Enables Heal on AOE
+            "2"				"144 ; 3" // lunchbox adds maxhealth bonus
+			"3"				"201 ; 1" // gesture increase
+			"4"				"551 ; 1" // special taunt
+		}
+        "425" // Family Business
+		{
+            "1"             "4  ;  3.3" // Clip size bonus
+            "2"             "6 ; 0.5"       //Fire rate increase
+            "3"             "25 ; 3.3"       //Max ammpo increase
+            "4"             "1 ; 0.85"       //Damage penalty
+		}
+		"5" // Fists
+		{
+			"1"          	"326  ;  2"    // JUMP HEIGHT OH BABY
+			"2"             "128 ; 1"       //Provide on active
+			"3"         	"107 ; 1.3" 	// Move Speed Bonus
+			"4"				"275 ; 1" 		//  Fall damage prevention
+			"5"				"2 ; 2" //Damage increase
+		}
+        "239" // GRU
+		{
+            "1"             "107  ;  1.83" // Move Speed Bonus
+            "2"             "128 ; 1"       //Provide on active
+			"3"				"414 ; 0" // no mark for death
+		}
+		 "1084" // Festive GRU
+		{
+            "1"             "107  ;  1.83" // Move Speed Bonus
+            "2"             "128 ; 1"       //Provide on active
+			"3"				"414 ; 0" // no mark for death
+		}
+		"331" // Fists of Steel
+		{
+			"1"			"177 ; 3" // deploy time increased	//DOES NOT WORK WITH PROVIDE ON ACTIVE
+            "2"         "128 ; 1"   //Provide on active
+			"3"			"205 ; 0" 	// dmg from ranged reduced
+			"4"			"206 ; 5"	 // dmg from melee increased
+			"5"         "107 ; 1.3" // Move Speed Bonus
+			"6"			"2 ; 2" //Damage increase
+		}
+		"310" // Warriors spirit
+		{
+			"1"         "26 ;   200"     // Health increase
+			"2"         "180  ;  100"    // Heal on kill
+			"3"			"2 ; 3" //Damage increase
+		}
+		"43" // K.G.B
+		{
+            "1"				"31 ; 30" 	// critboost on kill
+            "2"         	"107 ; 1.3" // Move Speed Bonus
+            "3"       		"128 ; 1"   //Provide on active
+            "4"				"2 ; 2" 	//Damage increase
+            "5"				"5 ; 1.5" 	// fire rate penalty
+		}
+		"426" // Eviction Notice
+		{
+            "1"				"1 ; 0.7"       //Damage Penalty
+            "2"				"6 ; 0.25" 		//Fire Rate Bonus
+            "3"         	"107 ; 1.4" 	// Move Speed Bonus
+            "4"       		"128 ; 1"   	//Provide on active
+			"5"				"149 ; 10" 		//bleeding duration
+		}
+        "656" // Holiday Punch
+		{
+            "1"         	"107 ; 1.3" // Move Speed Bonus
+            "2"       		"358 ; 1"   //Crit makes laugh
+            "3"       		"362 ; 1"   //Crit from behind
+            "4"             "369 ; 1" // tickle enemies wearing same weapon
+            "5"             "363 ; 1" // crits do no damage
+            "6"				"1 ; 0"       //Damage Penalty
+			"7"             "128 ; 1"       //Provide on active
+			"8"            	"28  ;  10000"    // VERY HIGH CRIT CHANCE
+			"9"				"5 ; 5.0" // fire rate decrease
+			"10"			"204 ; 1" //on miss, hit yourself idiot
+		}
+		"450" // Atomizer
+		{
+            "1"					"250 ; 5" //air dash count
+		}
+
+		"317" // Candy Cane
+		{
+            "1"					"203 ; 1" //drop health pack on kill
+			"2"				"108 ; 3" // health from packs increased
+			//"2"				"412 ; 1" // reduced to normal damage
+			//"3"				"62 ; 1" // reduced crit damage to balance out default code
+		}
+		"325" // Boston Basher
+		{
+            "1"					"149 ; 30" //bleeding duration
+            "2"					"204 ; 0" //hit self on miss
+		}
+		"448" // Soda Popper
+		{
+            "1"					"97 ; 0.5" // Reload time decreased
+            "2"					"6 ; 0.25" 	// fire rate bonus
+            "3"					"418 ; 0" // hype on damage
+            "4"					"43 ; 1"   // scattergun no reload single
+            "5"					"37 ; 3" // primary ammo
+            "6"					"107 ; 1" // move speed bonus
+			"7"                 "128 ; 1"       //Provide on active
+			"8"					"3 ; .5" // clip size penalty
+		}
+		"220" // Shortstop
+		{
+            "1"             	"26 ;  50"     // Health increase
+            "2"             	"16  ; 15"    // Health on hit
+            "3"             	"78 ; 3"    // maxammo secondary increased
+            "4"             	"2 ; 1.2"	 //Damage increase
+			"5"					"526 ; 2" // healing bonus
+			"6"					"438 ; 1" // crit wet
+		}
+		"45" // Force-a-Nature force a nature force of
+		{
+            "1"					"44 ; 1" // scattergun has knockback
+            "2"					"45 ; 16" // bullets per shot bonus
+            "3"					"3 ; 0.166" // clip size penalty
+            "4"					"43 ; 1"   // scattergun no reload single
+            "5"					"1 ; .35" // damage penalty
+            "6"					"106 ; 5" // weapon spread bonus
+            "7"					"37 ; 5" // primary ammo
+		}
+		"1078" // Festive Force-a-Nature
+		{
+            "1"					"44 ; 1" // scattergun has knockback
+            "2"					"45 ; 16" // bullets per shot bonus
+            "3"					"3 ; 0.166" // clip size penalty
+            "4"					"43 ; 1"   // scattergun no reload single
+            "5"					"1 ; .35" // damage penalty
+            "6"					"106 ; 5" // weapon spread bonus
+            "7"					"37 ; 5" // primary ammo
+		}
+		"13" // Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+		"772" // Baby Face's Blaster
+		{
+            "1"					"106 ; 0.6" // weapon spread bonus
+            "2"					"107 ; 1" // move speed bonus
+			"3"					"418 ; 1" // hype on damage
+			"4"					"491 ; 0" // hype resets on jump
+		}
+		"773" // Pretty Boy's Pocket Pistol
+		{
+            "1"             "26 ;   50"     // Health increase
+            "2"				"275 ; 1" 		//  Fall damage prevention
+			//"3"				"412 ; 1" // reduced to normal damage
+			//"4"				"62 ; 1" // reduced crit damage to balance out default code
+		}
+		"23" // Scout's Pistol
+		{
+            "1"					"97 ; 0.8" // Reload time decreased
+            "2"             	"78 ; 4"    // maxammo secondary increased
+            "3"		            "1 ; 0.65"     //Damage penalty
+            "4"					"6 ; 0.05" 	// fire rate bonus
+		}
+		"22" // Engie Pistol
+		{
+            "1"					"97 ; 0.8" // Reload time decreased
+            "2"             	"78 ; 4"    // maxammo secondary increased
+            "3"		            "1 ; 0.65"     //Damage penalty
+            "4"					"6 ; 0.05" 	// fire rate bonus
+		}
+		"294" // Lugermorph
+		{
+            "1"					"97 ; 0.8" // Reload time decreased
+            "2"             	"78 ; 4"    // maxammo secondary increased
+            "3"		            "1 ; 0.65"     //Damage penalty
+            "4"					"6 ; 0.05" 	// fire rate bonus
+		}
+		"160" // Vintage Lugermorph
+		{
+            "1"					"97 ; 0.8" // Reload time decreased
+            "2"             	"78 ; 4"    // maxammo secondary increased
+            "3"		            "1 ; 0.65"     //Damage penalty
+			"4"					"6 ; 0.05" 	// fire rate bonus
+        }
+		"209" // Strange Pistol
+		{
+            "1"					"97 ; 0.8"  // Reload time decreased
+            "2"             	"78 ; 4"    // maxammo secondary increased
+            "3"		            "1 ; 0.65"  //Damage penalty
+            "4"					"6 ; 0.05" 	// fire rate bonus
+		}
+		"449" // Winger
+		{
+            "1"             	"2 ; 2.5"	 //Damage increase
+            "2"             	"78 ; 1.5"    // maxammo secondary increased
+            "3"          	   	"5  ;  1.5"    // Fire rate penalty
+			"4"          	   	"326  ;  2"    // JUMP HEIGHT OH BABY
+			"5"					"275 ; 1" // no fall damage
+		}
+		"355" // Fan o war
+		{
+			"1"					"218 ; 1" // mark for death
+			"2"					"149 ; 10" // bleeding duration
+			"3"					"337 ; 1" //subtract victim medigun charge on hit
+			"4"		            "1 ; 0.1"     //Damage penalty
+			"5"					"6 ; 1.2" 	// fire rate penalty
+			"6"					"340 ; 1" //reveal disguised victim on hit
+		}
+		"7" // Wrench
+		{
+            "1"				"6 ; 0.35" 	//Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"				"15 ; 1" // crit mod disabled
+		}
+		"589" // Eureka effect
+		{
+			"1"					"465 ; 6" // Teleporter build speed
+			"2"					"2043 ; 1" // upgrade rate
+			"3"		            "94 ; 1" // repair rate
+			"4"					"148 ; 0" // building cost
+			"5"					"352 ; 1" // Eureka tele
+			"6"					"276 ; 1" // two way tele
+		}
+		"155" // Southern Hospitality
+		{
+			"1"		            "94 ; 3" // repair rate
+			"2"					"148 ; 2.15" // building cost
+			"3"					"345 ; 10" // Dispenser range
+			"4"					"80 ; 3" // maxammo metal increased
+			"5"					"2 ; 3" // Damage bonus
+			"6"					"2043 ; 4 " // upgrade rate, 100per hit
+			"7"					"6 ; 2" // fire rate penatly
+			"8"					"412 ; 1" // reduced to normal damage
+			"9"					"62 ; 1" // reduced crit damage to balance out default code
+			"10"				"149 ; 10" // bleeding duration
+
+		}
+
+		"142" // Gunslinger
+		{
+            "1"				"124 ; 1"   //MiniSentry
+			"2"				"125 ; 175" // max health additive
+			"3"				"321 ; 2" 	// build bonus penalty
+		}
+		"329" // jag
+		{
+			"1"					"2 ; 1.25"  // Damage Bonus
+			"2"					"327 ; 1" // building instant upgrade
+			"3"					"92 ; 10" 	// Construction rate increased
+		}
+		//"997" // Rescue Ranger
+		//{
+            //"1"					"469 ; 1" // engineer building teleporting pickup
+            //"2"					"474 ; 100" // arrow heals buildings
+            //"3" 	            "4  ;  3.3" // Clip size bonus
+           // "4"					"37 ; 3" // primary ammo
+           // "5"					"6 ; 0.5" 	// fire rate bonus
+			//"6"					"280 ; 18" 	// projectile type - rescueranger
+			//"7"            		"1 ; 0.3"   //Damage penalty
+		//}
+		"527" // Widowmaker
+		{
+			"1"						"298 ; 20" // mod ammo per shot
+			"2"						"301 ; 1" // mod use metal ammo type
+			"3"						"303 ; -1" //mod max primary clip override
+			"4"						"299 ; 100" // add onhit addammo
+			"5"						"6 ; 0.8" 	// fire rate bonus
+			"6"						"80 ; 1.5" // maxammo metal increased
+			"7"						"307 ; 1" // mod no reload DISPLAY ONLY
+			"8"						"113 ; 25" // metal regen
+		}
+		"141" // Frontier Justice
+		{
+			"1"						"136 ; 1" // mod sentry killed revenge
+			"2"						"15 ; 1" // crit mod disabled
+			"3"						"3 ; 0.75" // clip size penalty
+		}
+		"9" // engie shotgun
+		{
+			"1"          		   	"4  ;  1.5" // Clip size bonus
+            "2"         	    	"6 ; 0.5"   //Fire rate increase
+			"3"			            "25 ; 3.3"  //Max ammpo increase
+            "4"         		    "318 ; 0.5" // Reload Time
+		}
+		"528" // Short Circuit
+		{
+			"1"						"298 ; 50" // mod ammo per shot
+			"2"						"301 ; 1" // mod use metal ammo type
+			"3"						"300 ; 1" // electrical airblast DISPLAY ONLY
+			"4"						"307 ; 1" // mod no reload DISPLAY ONLY
+			"5"						"303 ; -1" //mod max primary clip override
+			"6"						"312 ; 1" // disable weapon hiding for animations
+			"7"						"299 ; 100" // add onhit addammo
+			"8"						"6 ; .2"  // fire rate bonus
+			"9"						"80 ; 1.5" // maxammo metal increased
+			"10"					"614 ; 1" // no metal from dispensers while active
+		}
+		"140" // Wrangler
+		{
+			"1" 	            	"26 ; 75"     // Health increase
+			"2"  		           	"57 ; 5"     // Health regen
+			"3"						"135 ; 0"   // Rocket Jump Damage Reduction
+		}
+		"1086" // Festive Wrangler
+		{
+			"1" 	            	"26 ; 75"     // Health increase
+			"2"  		           	"57 ; 5"     // Health regen
+			"3"						"135 ; 0"   // Rocket Jump Damage Reduction
+		}
+        "29" // MediGun
+		{
+            "1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "35" // KritsKrieg
+		{
+			"1"          		   	"18  ;  1"   // Kritz
+            "2"         	    	"10  ;  3"   //ubercharge fill rate
+			"3"             		"26 ;  100"     // Health increase
+		}
+        "411" // QuickFix
+		{
+			"1"          		   	"8  ;  3"      // Heal Rate Bonus
+            "2"         	    	"10  ;  2"   //ubercharge fill rate
+            "3"         	    	"231  ;  2"   //quickfix uber
+            "4"         	    	"144  ;  2"   //lunchbox adds minicrits
+			"5"  		           	"57 ;   15"     // Health regen
+			"6"						"11 ; 0.5" // Overheal set to half
+		}
+		"305" //Crusader's Crossbow
+		{
+			"1"						"199 ; 1" // fires healing bolts
+			"2"						"97 ; .25" // Reload time decreased
+			"3"			            "76 ; 2.6"  //Max ammpo increase
+		}
+		"1079" // Festive Crusader's Crossbow
+		{
+			"1"						"199 ; 1" // fires healing bolts
+			"2"						"97 ; .25" // Reload time decreased
+			"3"			            "76 ; 2.6"  //Max ammpo increase
+		}
+		"998" // Vaccinator
+		{
+			"1"						"10 ; 5" // ubercharge rate bonus
+			"2"						"144 ; 3" // lunchbox adds minicrits
+			"3"						"473 ; 3" // medigun charge is resists
+			"4"						"292 ; 1" // kill eater score type
+			"5"						"293 ; 2" // kill eater score type2
+			"6"          		   	"7  ;  1" // Heal Rate Penalty
+			"7"						"499 ; 1" // rage on heal is shield
+			"8"						"125 ; -100" //health decrease
+
+		}
+		"173" // Vita-Saw
+		{
+			"1"						"188 ; 100" // preserve ubercharge
+			"2"						"125 ; 100" // max health additive
+			"3"						"144 ; 2" // lunchbox adds minicrits
+		}
+		"30" // Invisibility Watch
+		{
+			"1"           	"128 ; 1"       //Provide on active
+			"2"            	"107  ;  3" // Move Speed Bonus
+            "3"				"35 ; 5" // mult cloak meter regen rate
+			"4"				"34 ; 0.5" // mult cloak meter consume rate
+		}
+        "61" // Ambi
+		{
+			"1"           	"51 ; 1"       //Headshots
+			"2"        		"5  ;  2"    // Fire rate penalty
+            "3"         	"2 ; 2"     //Damage increase
+            "4"            	"392 ; 0.05"     //Bodyshot decrease
+		}
+        "224" // Letranger
+		{
+            "1"				"6 ; 0.3" 		//Fire Rate Bonus
+            "2"            	"1 ; 0.15"   //Damage penalty
+            "3"             "166 ; 150"  //Add cloak on hit
+            "4"             "78 ; 5" // MaxAmmo count
+		}
+        "24" // Revolver
+		{
+            "1"				"6 ; 0.3"   //Fire Rate Bonus
+            "2"             "78 ; 5"    // MaxAmmo count
+		}
+		"1142" // Festive Revolver
+		{
+            "1"				"6 ; 0.3"   //Fire Rate Bonus
+            "2"             "78 ; 5"    // MaxAmmo count
+		}
+		"210" // strange Revolver
+		{
+            "1"				"6 ; 0.3"   //Fire Rate Bonus
+            "2"             "78 ; 5"    // MaxAmmo count
+		}
+        "460" // Enforcer
+		{
+            "1"             "2 ; 3.1"     //Damage increase
+            "2"             "5  ; 4"   // Fire rate penalty
+            "3"             "3 ;  0.16"    //Clip size Penalty
+			"4"				"299 ; 1 " //ammo on hit
+			"5"             "78 ; 0.25"    // maxammo secondary decreased
+		}
+        "16" // Smg
+		{
+            "1"				"6 ; 0.3" 		//Fire Rate Bonus
+            "2"             "1 ; 0.6"   //Damage penalty
+            "3"             "78 ; 8"    // MaxAmmo count
+            "4"             "4  ; 3" // Clip size bonus
+			"5"             "266 ; 1"  //projectile pen
+		}
+		"203" // strange Smg
+		{
+            "1"				"6 ; 0.3" 		//Fire Rate Bonus
+            "2"             "1 ; 0.6"   //Damage penalty
+            "3"             "78 ; 8"    // MaxAmmo count
+            "4"             "4  ; 3" // Clip size bonus
+			"5"             "266 ; 1"  //projectile pen
+		}
+		"1149" // Festive Smg
+		{
+            "1"				"6 ; 0.3" 		//Fire Rate Bonus
+            "2"             "1 ; 0.6"   //Damage penalty
+            "3"             "78 ; 8"    // MaxAmmo count
+            "4"             "4  ; 3" // Clip size bonus
+			"5"             "266 ; 1"  //projectile pen
+		}
+        "14" // Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+		"230" // Sydney Sleeper
+		{
+			"1"					"41 ; 2" // sniper charge per sec
+			"2"					"42 ; 1" // sniper no headshots
+			"3"					"175 ; 15" // jarate duration
+			"4"				"179 ; 1" // minicrits become crits
+		}
+		"526" // machina
+		{
+            "1"             "308 ;   1"     // penetrate when charged
+            "2"             "297 ;   0"     // only fire zoomed
+            "3"             "304 ;   10"     //full charge bonus
+            "4"             "1 ; 0.1"   //Damage penalty
+			"5"				"305 ; 1" //tracer
+		}
+        "402" // bazaar
+		{
+            "1"             "237 ;   1"     // mult charge after headshot
+            "2"             "222 ;   1"     // mult charge after bodyshot
+            "3"             "223 ;   1"     //mult charge after miss
+			"4"				"390 ; 	 2" // headshot damage increase
+		}
+        "752" // hitmans
+		{
+            "1"             "219 ;   1"     // decapitate
+            "2"             "329 ;   0"   // dmg penalty on bodyshot
+            "3"             "387 ;   100"     //rage on kill
+            "4"             "398 ;   50"     //rage on assist
+            "5"             "116 ;   6"     //soldier buff type
+			"6"             "318 ; .25" // Reload Time
+			"7"             "76 ; 2.5"    // maxammo secondary increased
+		}
+        "751" // Cleaner's Carbine
+		{
+            "1"				"6 ; 0.7" 	//Fire Rate Bonus
+			"2"				"613 ; 30" 	// mini crits for 30 seconds
+			"3"             "4  ; 1.5" // Clip size bonus
+			"4"             "78 ; 2"    // MaxAmmo count
+		}
+        "231" // darwins
+		{
+            "1"             "26 ;   200"     // Health increase
+		}
+        "642" // cozy
+		{
+            "1"             "57 ;   10"     // Health regen
+            "2"             "377 ;   0.001"     // Knockback when aiming reduced
+            "3"             "376 ;   1"     // aim no flinch
+            "4"             "378 ;   2"     // aim walk speed decreased -  reversed to make faster
+			"5"				"412 ; 1" // reduced to normal damage
+			"6"				"62 ; 1" // reduced crit damage to balance out default code
+		}
+		"56" // Huntsman
+		{
+			"1"             "76 ; 3" // MaxAmmo count
+			"2"             "318 ; 0.5" // Reload Time
+			"3"             "1 ; 1"  //Damage penalty
+			"4"             "266 ; 1"  //projectile pen
+			"5"             "26 ;   50"     // Health increase
+		}
+		"1092" // Fortified compound huntsman
+		{
+			"1"             "76 ; 3" // MaxAmmo count
+			"2"             "318 ; 0.5" // Reload Time
+			"3"             "1 ; 1"  //Damage penalty
+			"4"             "266 ; 1"  //projectile pen
+			"5"             "26 ;   50"     // Health increase
+		}
+		"17" // syringe gun
+		{
+            "1"				"6 ; 0.7" 	//Fire Rate Bonus
+            "2"             "17  ;  0.05"    //add uber
+			"3"             "76 ; 3" // MaxAmmo count
+		}
+        "37" // ubersaw
+		{
+            "1"             "5  ;  3"    // Fire rate penalty
+            "2"             "17  ;  .5"    //add uber
+		}
+		"1003" // Festive ubersaw
+		{
+            "1"             "5  ;  2.5"    // Fire rate penalty
+            "2"             "17  ;  1"    //add uber
+		}
+        "4" // knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "356" // kunai
+		{
+            "1"				"125 ; -100" 	// Health change
+			"2"				"140 ; -150" 	// Health Change hidden
+			"3"				"220 ;  99900" 	// Absorb Health
+		}
+		"225" // Eternal Reward
+		{
+			"1"				"154 ; 1" //disguise on backstab
+			"2"				"144 ; 1" // lunchbox adds minicrits
+			"3"				"155 ; 0" // cannot disguise
+		}
+		"649" // Spy-cicle
+		{
+			"1"				"347 ; 1" //freeze backstab victim
+			"2"				"156 ; 1" // silent killer
+			"3"				"359 ; 3" // Immune to fire
+			"4"				"361 ; 6" // become fireproof on hit by fire
+			"5"				"365 ; 3" // set icicle knife mode
+		}
+		"461" // Big Earner
+		{
+			"1"             "166 ; 150"  //Add cloak on hit
+			"2"             "107 ; 1.1" // Move Speed Bonus
+			"3"             "125 ; -20"     // Health decrease
+			"4"				"251 ; 1" // speedbuff on ally hit
+			"5"				"264 ; 1.25" // melee range multiplier
+			"6"				"263 ; 1.25" // melee bound muliplier?
+		}
+		"59" // Dead Ringer
+		{
+			"1"				"33 ; 1" // set cloak is feign death
+			"2"				"34 ; .9" // mult cloak meter consume rate
+			"3"				"35 ; 2" // mult cloak meter regen rate
+			"4"				"292 ; 9" // kill eater score type
+		}
+		"60" // Cloak and Dagger
+		{
+			"1"				"48 ; 2" // set cloak is movement based
+		}
+        "401" // shahshhahsahhahahahshsha
+		{
+			"1"				"224 ; 5" // damage bonus when half dead
+			"2"				"225 ; 0.1" // damage penalty while half alive
+		}
+        "171" // tribalmans
+		{
+			"1"				"149 ; 10" // bleeding duration
+			"2"				"208 ; 1"  // Ignite
+		}
+        "264" // frying pan
+		{
+			"1"				"6 ; 0.5" 	//Fire Rate Bonus
+			"2"				"208 ; 1"  // Ignite
+			"3"             "1 ; 0.5"  //Damage penalty
+            "4"				"134 ; 1" // Particle Effect
+		}
+        "200" // strange Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "669" // festive Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "799" // silver Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "808" // gold Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "888" // rust Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "897" // blood Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "906" // carbonado Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "915" // diamond Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "964" // silver II Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "973" // gold II Scattergun
+		{
+            "1"					"97 ; 0.75" // Reload time decreased
+            "2"					"37 ; 3" // primary ammo
+            "3"					"106 ; 0.05" // weapon spread bonus
+            "4"					"45 ; 2" // bullets per shot bonus
+            "5"					"6 ; 0.75" 	// fire rate bonus
+            "6" 				"15 ; 1" // crit mod disabled
+			"7"					"1 ; .8" // damage penalty
+		}
+        "1005" // festive Huntsman
+		{
+			"1"             "76 ; 3" // MaxAmmo count
+			"2"             "318 ; 0.5" // Reload Time
+			"3"             "1 ; 1"  //Damage penalty
+			"4"             "266 ; 1"  //projectile pen
+			"5"             "26 ;   50"     // Health increase
+		}
+        "201" // strange Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+		"664" // festive Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "851" // awperhand
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "792" // silver Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "801" // gold Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "881" // rust Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "890" // blood Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "899" // carbonado Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "908" // diamond Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "857" // silver II Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "966" // gold II Sniper Rifle
+		{
+			"1"					"41 ; 5" // sniper charge per sec
+			"2"					"390 ; 2" // headshot damage increase
+		}
+        "205" // strange Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "658" // Festive Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "513" // Original
+		{
+            "1"             "104 ; 0.32"  	//Speed decrease
+            "2"             "99 ; 1"		 //Splash Increase
+            "3"             "2 ; 5" 		//Damage increase
+			"4"             "97 ;  1.4"    	//Reload Decrease
+            "5"             "3 ;  0.25"    	//Clip size Penalty
+            "6"             "15 ; 1" 		//Crits Disabled
+        }
+        "800" // Silver Bot Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" 		//Splash Increase
+            "3"             "2 ; 5" 		//Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "809" // Gold Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "889" // Rust Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "898" // Blood Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "907" // Carbonado Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "916" // Diamond Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "965" // Silver II Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "974" // Gold II Rocket Launcher
+		{
+            "1"             "104 ; 0.32"  //Speed decrease
+            "2"             "99 ; 1" //Splash Increase
+            "3"             "2 ; 5" //Damage increase
+			"4"             "97 ;  1.4"    //Reload Decrease
+            "5"             "3 ;  0.25"    //Clip size Penalty
+            "6"             "15 ; 1" //Crits Disabled
+        }
+        "298" // iron curtain
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "202" // strange Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "654" // festive Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "793" // silver Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "802" // gold Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "882" // rust Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "891" // blood Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "900" // carbonado Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "909" // diamond Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "958" // silver II Mini-Gun
+		{
+			"1"             "76 ; 5" // MaxAmmo count
+			"2"             "6 ; .9" //Fire rate increase
+			"3"            	"16  ; 10"    // Health on hit
+		}
+        "967" // gold II Mini-Gun
+		{
+			"1"             "76 ; 5" 	// MaxAmmo count
+			"2"             "6 ; .9" 	//Fire rate increase
+			"3"            	"16  ; 20"    // Health on hit
+		}
+        "206" // strange PipeLauncher
+		{
+            "1"             "411 ; 10" //Angle Penalty
+            "2"             "4  ;  20" /// Clip size bonus
+            "3"             "76 ; 10" // MaxAmmo count
+            "4"             "413 ; 1" //Auto-Fire Clip
+            "5"             "417 ; 1" //Can Overload
+            "6"             "394 ; 0.08" //Fire Rate increase hidden
+            "7"             "241 ; 0.75" //Reload increase hidden
+            "8"             "15 ; 0" //Crits Disabled
+			"9"             "470 ; 0.5" //grenades do less damage after world contact
+			"10"			"214 ; 1" // strange counter
+        }
+        "1007" // festive PipeLauncher
+		{
+            "1"             "411 ; 10" //Angle Penalty
+            "2"             "4  ;  20" /// Clip size bonus
+            "3"             "76 ; 10" // MaxAmmo count
+            "4"             "413 ; 1" //Auto-Fire Clip
+            "5"             "417 ; 1" //Can Overload
+            "6"             "394 ; 0.08" //Fire Rate increase hidden
+            "7"             "241 ; 0.75" //Reload increase hidden
+            "8"             "15 ; 0" //Crits Disabled
+			"9"             "470 ; 0.5" //grenades do less damage after world contact
+			"10"			"214 ; 1" // strange counter
+        }
+        "207" // strange Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "661" // festive Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "797" // silver Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "806" // gold Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "886" // rust Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "895" // blood Stickylaucnher
+		{
+            "1"             "96 ; 0.5" 		//Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "904" // carbonado Stickylaucnher
+		{
+            "1"             "96 ; 0.5" 		//Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "913" // diamond Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "962" // silver II Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "971" // gold II Stickylaucnher
+		{
+            "1"             "96 ; 0.5" //Reload increase
+            "2"             "78 ; 10"       // MaxAmmo count
+			"3"             "6 ; 0.3"       //Fire rate increase
+        }
+        "1006" // festive Ambi
+		{
+			"1"           	"51 ; 1"       //Headshots
+			"2"        		"5  ;  2"    // Fire rate penalty
+            "3"         	"2 ; 2"     //Damage increase
+            "4"            	"392 ; 0.05"     //Bodyshot decrease
+		}
+        "727" //black rose knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "194" //strange knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "665" //festive knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "794" //silver knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "803" //gold knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "883" //rust knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "892" //gold knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "901" //carbonado knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "910" //diamond knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "959" //silver II knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "968" //gold II knife
+		{
+            "1"				"31 ; 5" 	// critboost on kill
+			"2"             "394 ; 0.5"     //Fire rate increase
+		}
+        "199" // strange shotgun
+		{
+			"1"          		   	"4  ;  1.5" // Clip size bonus
+            "2"         	    	"6 ; 0.5"   //Fire rate increase
+			"3"			            "25 ; 3.3"  //Max ammpo increase
+            "4"         		    "318 ; 0.5" // Reload Time
+		}
+		"1141" // festive shotgun
+		{
+			"1"          		   	"4  ;  1.5" // Clip size bonus
+            "2"         	    	"6 ; 0.5"   //Fire rate increase
+			"3"			            "25 ; 3.3"  //Max ammpo increase
+            "4"         		    "318 ; 0.5" // Reload Time
+		}
+        "141" // festive Frontier Justice
+		{
+			"1"						"136 ; 1" // mod sentry killed revenge
+			"2"						"15 ; 1" // crit mod disabled
+			"3"						"3 ; 0.75" // clip size penalty
+		}
+        "169" // golden wrench ;_;
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"						"15 ; 1" // crit mod disabled
+		}
+        "197" // strange wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"						"15 ; 1" // crit mod disabled
+		}
+        "662" // silver wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"						"15 ; 1" // crit mod disabled
+		}
+        "795" // silver wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"						"15 ; 1" // crit mod disabled
+		}
+        "804" // gold wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"						"15 ; 1" // crit mod disabled
+		}
+        "884" // rust wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"						"15 ; 1" // crit mod disabled
+		}
+        "893" // rust wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"				"15 ; 1" // crit mod disabled
+		}
+        "902" // carbonado wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"				"15 ; 1" // crit mod disabled
+		}
+        "911" // diamond wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"				"15 ; 1" // crit mod disabled
+		}
+        "960" // silver II wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"				"15 ; 1" // crit mod disabled
+		}
+        "969" // gold II wrench
+		{
+            "1"				"6 ; 0.35"  //Fire Rate Bonus
+			"2"		        "1 ; .75"     //Damage penalty
+			"3"				"15 ; 1" // crit mod disabled
+		}
+        "204" // strange syringe gun
+		{
+            "1"				"6 ; 0.3" 	//Fire Rate Bonus
+            "2"             "17  ;  0.05"    //add uber
+		}
+        "211" // strange MediGun
+		{
+			"1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "663" // festive MediGun
+		{
+		    "1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "796" // silver MediGun
+		{
+			"1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "805" // gold MediGun
+		{
+		    "1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "885" // rust MediGun
+		{
+			"1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "894" // blood MediGun
+		{
+			"1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "903" // carbonado MediGun
+		{
+			"1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "912" // diamond MediGun
+		{
+			"1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "961" // silver II MediGun
+		{
+			"1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "970" // gold II MediGun
+		{
+			"1"         	    	"11 ; 1.5"   //OverhealBonus
+			"2" 	            	"26 ;  50"     // Health increase
+		}
+        "208" // strange FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "659" // festive FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "798" // silver FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "807" // gold FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "887" // rust FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "896" // blood FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "905" // carbonado FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "914" // diamond FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "963" // silver II FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "972" // gold II FlameThrower
+		{
+            "1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" /// Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+        }
+        "452" // Three-Rune Blade
+		{
+            "1"					"149 ; 30" //bleeding duration
+            "2"					"204 ; 0" 	//hit self on miss
+		}
+		"192" // Fire Axe strange
+		{
+			"1"				"178 ; .5"  // Weapon Switch Decrease
+			"2"				"2 ; 1.5"  // Damage Bonus
+			"3"				"267 ; 1" // Crit When Airborne
+			"4"				"15 ; 0" // Critmod Disabled
+		}
+		"739" // Lolichop
+		{
+			"1"				"178 ; .5"  // Weapon Switch Decrease
+			"2"				"2 ; 1.5"  // Damage Bonus
+			"3"				"267 ; 1" // Crit When Airborne
+			"4"				"15 ; 0" // Critmod Disabled
+		}
+		"457" // Postal Pummeler
+		{
+			"1"				"20 ; 1" // crit vs burning players
+			"2" 			"21 ; 0" //	dmg penalty vs nonburning
+			"3"				"22 ; 1" // no crit vs nonburning
+			"4"				"2 ; 1.5"  // Damage Bonus
+		}
+		"1000" // Festive Axtinguisher
+		{
+			"1"				"20 ; 1" // crit vs burning players
+			"2" 			"21 ; 0" //	dmg penalty vs nonburning
+			"3"				"22 ; 1" // no crit vs nonburning
+			"4"				"2 ; 1.5"  // Damage Bonus
+			"5"				"638 ; 0" // minicrit front, crit behind
+		}
+		"466" // Maul
+		{
+			"1"				"137 ; 10" // dmg bonus vs buildings
+			"2"				"146 ; 1" // damage applies to sappers
+            "3"             "169 ; 0.1" // Reduced sentry damage
+            "4"				"2 ; 1"  // Damage Bonus
+			"5"             "252  ;  0.01"   // Force Reduction
+			"6"				"214 ; 1" // strange counter
+			"7"           	"128 ; 1"       //Provide on active
+			"8"				"67 ; 1.5" // dmg taken from bullets increased
+			"9"				"206 ; 3"	 // dmg from melee increased
+		}
+		"834" // Neon Annihilator Genuine
+		{
+			"1"				"146 ; 1" // damage applies to sappers
+			"2"				"438 ; 1" // crit vs wet players
+			"3"				"2 ; 1.5"  // Damage Bonus
+		}
+		"191" // Bottle Strange
+		{
+            "1"             "394 ; 0.5"     //Fire rate increase
+        }
+		"609" // Scottish Handshake
+		{
+            "1"             "394 ; 0.5"     //Fire rate increase
+        }
+		"154" // Pain Train
+		{
+            "1"             "68 ; 3"     //Capture rate increased
+			"2"             "67 ; 2"     //Bullet Vulnerability
+        }
+		"741" // Rainblower
+		{
+			"1"             "171 ; 0.25" //Airblast Cost Reduced
+            "2"             "256  ;  0.1" // Refire Time Airblast
+			"3"             "254   ; 4" //Reflect Only
+		}
+		"638" // Sharp Dresser
+		{
+			"1"				"31 ; 3" 	// critboost on kill
+		}
+		"10" // Soldier's Shotgun
+		{
+			"1"          		"4  ;  1.5" // Clip size bonus
+            "2"         	    "6 ; 0.5"   //Fire rate increase
+			"3"			        "25 ; 3.3"  //Max ammpo increase
+            "4"         		"318 ; 0.5" // Reload Time
+		}
+		"12" // Pyro's Shotgun
+		{
+			"1"          		"4  ;  1.5" // Clip size bonus
+            "2"         	    "6 ; 0.5"   //Fire rate increase
+			"3"			        "25 ; 3.3"  //Max ammpo increase
+            "4"         		"318 ; 0.5" // Reload Time
+		}
+		"11" // Heavy's Shotgun
+		{
+			"1"          	"4  ;  1.5" // Clip size bonus
+            "2"         	"6 ; 0.5"   //Fire rate increase
+			"3"			    "25 ; 3.3"  //Max ammpo increase
+            "4"         	"318 ; 0.5" // Reload Time
+		}
+		"36" // Blutsauger
+		{
+			"1"             "16  ; 30"    // Health on hit
+			"2"             "180  ;  150"    // Heal on kill
+		}
+		"8" // bonesaw
+		{
+			"1"             "6 ; 0.8"       //Fire rate increase
+			"2"				"149 ; 30"      //bleeding duration
+		}
+		"1143" // festive bonesaw
+		{
+			"1"             "6 ; 0.8"       //Fire rate increase
+			"2"				"149 ; 30"      //bleeding duration
+		}
+		"304" // amputator
+		{
+			"1"				"129 ; 10" // health drain good
+			"2"             "128 ; 0"    //Provide on active
+		}
+		"1104" // Airstrike
+		{
+			"1"				"644 ; 9" 		// clip size on kill
+			"2"				"621 ; .1" 		// Rocketjump attack speed %
+			"3"				"4 ; 1.5" 		// clip size bonus
+			"4"             "1 ; .75"  		//Damage penalty
+			"5"     		"318 ; 0.75" 	// Reload Time
+			"6"			    "76 ; 2"  		//Max ammo increase
+			"7"				"6 ; 1" 		// Firerate bonus
+		}
+		"1103" // Back scatter
+		{
+			"1"				"613 ; 15" // minicrits on kill
+			"2"				"179 ; 1" // minicrits become crits
+			"3"			    "106 ; 1" // weapon spread bonus
+			"4"            	"76 ; 3"    // maxammo secondary increased
+			"5"				"3 ; 1" // clip size penalty
+			"6"				"619 ; 1" // closerange backattack minicrit
+		}
+		"1098" // The classic
+		{
+			"1"             "378 ; 2"   // aim walk speed decreased -  reversed to make faster
+			"2"				"41 ; 2.5" // sniper charge per sec
+			"3"				"306 ; 0" // no headshots whithout full charge off
+			"4"				"636 ; 1" // charge and fire shots independant of zoom
+			"5"				"637 ; 1" // zoom?
+		}
+
+		"812" // The flying guillotine cleaver
+		{
+			"1"				"278 ; .25" // effect bar recharge
+			"2"				"616 ; 1" // throwable primeable
+			"3"				"437 ; 1" // crit vs. stunned
+		}
+		"163" // crit-a-cola
+		{
+			"1"				"278 ; .75" // effect bar recharge
+			"2"				"144 ; 2" // lunchbox adds minicrits
+		}
+		"232" // Bushwacka
+		{
+			"1"				"107 ; 1.2" // move speed bonus
+			"2"             "128 ; 1"   //Provide on active
+			"3"				"179 ; 1" // minicrits become crits
+			"4"				"2 ; 1.5" // Damage bonus
+			"5"             "28  ;  0"      // No random crits
+		}
+		"58" // Jarate
+		{
+			"1"				"278 ; .40" // effect bar recharge
+			"2"				"279 ; 3" //Maxammo grenades is throwable items
+			"3" 			"99 ; 3" // Blast radius increased
+		}
+		"44" // Sandman
+		{
+            "1"				"278 ; .4" // effect bar recharge
+			"2"				"279 ; 3" // Maxammo grenades is throwable items
+			"3"				"38 ; 1" // throwable chargable
+		}
+		"0" // baseball bat
+		{
+            "1"				"215 ; 150" // Z knockback
+			"2"				"216 ; 300" // FORWARD knockback
+			"3"				"2 ; 4.5"  // Damage Bonus
+			"4"             "15  ;  0" // NO RANDOM CRITS
+			"5"				"125 ; -100" //health decrease
+			"6"				"275 ; 1" // no fall damage
+		}
+		"594" // Phlog
+		{
+			"1"				"368 ; 1" // mmmmph
+			"2"				"116 ; 5" // mod soldier buff type
+			"3"				"356 ; 1" // airblast disabled
+			"4"				"144 ; 1" // lunchbox adds minicrits
+			"5"				"551 ; 1" // special taunt
+			"6"				"350 ; 1" // ragdols become ash
+			"7"				"201 ; 2" // gesture increase
+		}
+		"222" // mad milk
+		{
+			"1"				"278 ; .40" 	// effect bar recharge
+			"2" 			"99 ; 3" 		// Blast radius increased
+			"3"				"129 ; 5" 		// Health Regen
+		}
+		"1121" // Mutated milk
+		{
+			"1"				"278 ; .40" 	// effect bar recharge
+			"2" 			"99 ; 3" 		// Blast radius increased
+			"3"				"129 ; 5" 		// Health Regen
+		}
+		"735" // Sapper
+		{
+			"1"				"425 ; 1.75" // Sapper damage bonus
+			"2"				"427 ; 10" // Sapper leeches health
+		}
+		"736" // Strange Sapper
+		{
+			"1"				"425 ; 1.75" // Sapper damage bonus
+			"2"				"427 ; 10" // Sapper leeches health
+		}
+		"1080" // Festive Sapper
+		{
+			"1"				"425 ; 1.75" // Sapper damage bonus
+			"2"				"427 ; 10" // Sapper leeches health
+		}
+		"1102" // Snack Attack Sapper
+		{
+			"1"				"425 ; 1.75" // Sapper damage bonus
+			"2"				"427 ; 10" // Sapper leeches health
+		}
+		"933" // Ap-Sap
+		{
+			"1"				"425 ; 1.75" // Sapper damage bonus
+			"2"				"427 ; 10" // Sapper leeches health
+		}
+		"588" // Pomson 6000
+		{
+			//"2"				"337 ; 5" // Subtract medigun
+			"1"				"338 ; 5" // Subtract cloak
+			"2"				"339 ; 1" // Reveal cloaked
+			"3"				"340 ; 1" // Reveal disguise
+			"4"             "349 ; 0" // NO RELOAD NECESSARY
+			"5"				"6 ; .3"  // Firerate bonus
+			"6"             "1 ; 0.1" //Damage penalty
+			"7"             "28  ;  0"      // No random crits
+
+		}
+		"1150" // Quickiebomb Launcher
+		{
+			"1"				"670 ; 0.01" //sticky bomb charge rate
+			"2"				"669 ; 1" // fizzle time
+			"3"				"4 ; 0.75" // clip size bonus
+			"4"				"97 ; 0.7" // Reload time decreased
+			"5"				"126 ; -2" // sticky arm time bonus
+			"6"				"6 ; 0.5" 	//Fire Rate Bonus
+			"7"				"15 ; 1" // crit mod disabled
+
+		}
+		"1151" // Iron Bomber
+		{
+			"1"             "100 ; 0.85" //Splash decrease
+			"2"				"6 ; 0.5" 	//Fire Rate Bonus
+			"3"				"97 ; 0.5" // Reload time decreased
+			"4"				"671 ; 1" // no bounce try higher number
+			"5"				"684 ; 3" // grenade detonation damage penalty
+			"6"				"76 ; 5" // max ammo increase
+			"7"				"4 ; 4" // clip size increase
+		}
+		"1153" // Panic Attack
+		{
+			"1"				"708 ; 1" // panic attack attrb try higher number try beggars stats
+			"2"				"709 ; 0.5" // panic attack low hp spread
+			"3"				"710 ; 1" // auto fire full clip penalty
+			"4"				"711 ; 0" // autofire when full
+			"5"				"651 ; 0.25" // firerate bonus low hp
+			"6"				"644 ; 9" 		// clip size on kill
+			"7"				"97 ; 0.2" // Reload time decreased
+			"8"             "394 ; 0.5" //Fire Rate increase hidden
+			"9"				"424 ; 1.5" // clip size penalty hidden
+			"10"		    "25 ; 5"  		//Max ammo increase
+			//"11"			"76 ; 5"  		//Max ammo increase
+			//"12"             "128 ; 1"       //Provide on active
+		}
+    }
+	"STEAM_0:1:19354576;STEAM_0:0:11531014;STEAM_0:1:45205806;STEAM_0:1:4508686;"
+	{
+        "474" //OBJECTOR
+		{
+			"1"				"66 ; 0.001" 	// dmg from BULLETS reduced
+			"2"				"60 ; 0" 	// dmg from FIRE reduced
+			"3"				"64 ; 0" 	// dmg from BLAST reduced
+			"4"				"62 ; 0" 	// dmg from CRIT reduced
+			"5"				"206 ; 0"	 // dmg from melee increased
+			"6"				"169 ; 1000"	 // dmg from SENTRY increased
+			"7"             "1 ; 0"  //Damage penalty
+            "8"				"400 ; 1" // cannot pickup intel
+			"9"				"226 ; 1" // honorbound
+			"10"			"218 ; 1" // mark for death
+			"11"			"201 ; 2" // gesture increase
+			"12"			"128 ; 1" // only on active
+			"13"            "68 ; -1"     //Capture rate increased
+		}
+		"1150" // Quickiebomb Launcher
+		{
+			"1"				"670 ; 0.01" //sticky bomb charge rate
+			"2"				"669 ; 1.5" // fizzle time
+			"3"				"4 ; 0.75" // clip size bonus
+			"4"				"97 ; 0.7" // Reload time decreased
+			"5"				"126 ; -2" // sticky arm time bonus
+			"6"				"6 ; 0.5" 	//Fire Rate Bonus
+			"7"					"15 ; 1" // crit mod disabled
+
+		}
+		"153" // Homewrecker
+		{
+			"1"				"137 ; 5" // dmg bonus vs buildings
+			"2"				"146 ; 1" // damage applies to sappers
+            "3"             "169 ; 0.3" // Reduced sentry damage
+			"4"             "252  ;  0.01"   // Force Reduction
+			"5"				"214 ; 1" // strange counter
+			"6"           	"128 ; 1"       //Provide on active
+			"7"				"67 ; 1.5" // dmg taken from bullets increased
+			"8"				"206 ; 3"	 // dmg from melee increased
+		}
+		"1151" // Iron Bomber
+		{
+			"1"             "100 ; 0.85" //Splash decrease
+			"2"				"6 ; 0.5" 	//Fire Rate Bonus
+			"3"				"97 ; 0.5" // Reload time decreased
+			"4"             "4  ;  4" // Clip size bonus
+			"5"				"671 ; 1" // no bounce try higher number
+			"6"             "1 ; 0.5"       //Damage penalty
+			"7"				"684 ; 3" // grenade detonation damage penalty
+			"8"		    	"76 ; 5"  	//Max ammo increase
+		}
+		"1153" // Panic Attack
+		{
+			"1"				"708 ; 1" // panic attack attrb try higher number try beggars stats
+			"2"				"709 ; 0.5" // panic attack low hp spread
+			"3"				"710 ; 1" // auto fire full clip penalty
+			"4"				"711 ; 0" // autofire when full
+			"5"				"651 ; 0.25" // firerate bonus low hp
+			"6"				"644 ; 9" 		// clip size on kill
+			"7"				"97 ; 0.2" // Reload time decreased
+			"8"             "394 ; 0.5" //Fire Rate increase hidden
+			"9"				"424 ; 1.5" // clip size penalty hidden
+			"10"		    "25 ; 5"  		//Max ammo increase
+			//"11"			"76 ; 5"  		//Max ammo increase
+			//"12"             "128 ; 1"       //Provide on active
+		}
+
+
+		"172" // Scotsmans skullcutter
+		{
+			"1"				"57 ; 15" // Health per second
+			"2"             "2 ; 2.5" //Damage increase
+			"3"             "107  ;  0.73" // Move Speed Bonus
+            "4"             "128 ; 1"       //Provide on active
+			"5"				"251 ; 1" // speedbuff on ally hit
+			"6"				"246 ; 5" // Turn control
+			"7"             "202 ; 0"     //Charge duration decreae
+			"8"				"2034 ; 1" // Charge kill refills meter
+			"9"				"264 ; 1.5" // melee range multiplier
+			//"10"			"263 ; -1" // melee bound muliplier?
+		}
+		"752" // hitmans
+		{
+            "1"             "219 ;   1"     // decapitate
+            "2"             "329 ;   0"   // dmg penalty on bodyshot
+            "3"             "387 ;   100"     //rage on kill
+            "4"             "398 ;   50"     //rage on assist
+            "5"             "116 ;   6"     //soldier buff type
+			"6"             "318 ; .25" // Reload Time
+			"7"             "76 ; 50"    // maxammo secondary increased
+			"8"				"651 ; 0.05" // firerate bonus low hp
+			"9"             "26 ;   500"     // Health increase
+		}
+
+		//take hp from pyro
+		//degreaser gets hp+ and regen
+
+		//family buisness
+		//knockback, slow on hit?
+		//loosecannon rapid fire like people want but normal reload. just like pomsen
+		// not sure what to do with damage, maybe similar ammo and % as liberty
+		// that way it still feels spammy ie 4>
+
+	}
+}

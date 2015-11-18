@@ -15,7 +15,7 @@ class ImportToDB extends Command
 
     protected $name = 'rxg-x10:import';
 
-    protected $description = 'Write a tf2items.weapons.txt file to the master database';
+    protected $description = 'Write a tf2items.weapons.txt file to the master config';
 
     public function fire()
     {
@@ -26,10 +26,10 @@ class ImportToDB extends Command
         $config = Models\Config::where('name', '=', 'master')->get()->first();
 
         if (!$config instanceof Models\Config) {
-            throw new \DomainException('Unable to locate master database');
+            throw new \DomainException('Unable to locate master config');
         }
 
-        $this->dispatch(new ImportFileToDB($tree, $config));
+        $this->dispatch(new ImportFileToDB($tree, $config, $this));
 
         $end_time = microtime(true);
 

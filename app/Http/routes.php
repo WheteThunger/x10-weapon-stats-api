@@ -36,6 +36,9 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
     Route::model('weaponInstance', 'X10WeaponStatsApi\Models\WeaponInstance');
     Route::resource('weapon-instance', 'WeaponInstancesController');
 
+    Route::model('config', X10WeaponStatsApi\Models\Config::class);
+    Route::resource('configs', 'ConfigsController');
+
 });
 
 Route::group(['prefix' => 'api/v1', 'namespace' => 'Api\v1'], function () {
